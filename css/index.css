@@ -1,0 +1,80 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #007db8;
+    color: #FFF;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+    border-color: #FFF;
+    background-color: transparent !important;
+    margin-bottom: 10px;;
+}
+
+.btn,
+.btn:hover {
+    border-radius: 0;
+    border-color: #FFF;
+}
+
+::-webkit-input-placeholder {
+    color: rgb(160, 215, 233) !important;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    /*margin-bottom: -1px;*/
+    border-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    /*margin-bottom: 10px;*/
+    border-radius: 0;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='password'],
+textarea,
+select {
+    outline: none;
+    box-shadow:none !important;
+    border:1px solid #FFF !important;
+}

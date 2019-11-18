@@ -1,0 +1,20 @@
+{
+    "id": 1, 
+    "fisrtName": "Keanu", 
+    "lastName": "Reeves",
+    "birthDate": "01/01/1980",
+    "dept": {
+        "id": 1, 
+        "descr": "Development"
+    }, 
+    "contactPhone": "+55 21 991388372",
+    "emailAddress": "keanu@gmail.com",
+    "username": "keanu",
+    "password": "Abc123#asdfg",
+    "language": "pt-br",
+    "timeZone": "Brasilia",
+    "communication": ["EMAIL", "PHONE"],
+    "passwordResetVerif": true,
+    "disabled": null,
+    "groupParticipant": [1, 2, 3]
+}

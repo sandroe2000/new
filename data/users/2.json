@@ -1,0 +1,20 @@
+{
+    "id": 2, 
+    "fisrtName": "Mariane", 
+    "lastName": "Espindula",
+    "birthDate": "01/01/1980",
+    "dept": {
+        "id": 2, 
+        "descr": "Salles"
+    }, 
+    "contactPhone": "+55 11 98551319",
+    "emailAddress": "mariane@gmail.com",
+    "username": "maryespindula",
+    "password": "Abcd#1234",
+    "language": "pt-br",
+    "timeZone": "Brasilia",
+    "communication": ["EMAIL", "WHATSAPP"],
+    "passwordResetVerif": true,
+    "disabled": null,
+    "groupParticipant": [4]
+}

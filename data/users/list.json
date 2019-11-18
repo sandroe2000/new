@@ -1,0 +1,64 @@
+{
+    "list": [
+        {
+            "id": 1, 
+            "fisrtName": "Keanu", 
+            "lastName": "Reeves",
+            "birthDate": "01/01/1980",
+            "dept": {
+                "id": 1, 
+                "descr": "Development"
+            }, 
+            "contactPhone": "+55 21 991388372",
+            "emailAddress": "keanu@gmail.com",
+            "username": "keanu",
+            "password": "Abc123#asdfg",
+            "language": "pt-br",
+            "timeZone": "Brasilia",
+            "communication": ["EMAIL", "PHONE"],
+            "passwordResetVerif": true,
+            "disabled": "",
+            "groupParticipant": [1, 2, 3]
+        },
+        {
+            "id": 2, 
+            "fisrtName": "Mariane", 
+            "lastName": "Espindula",
+            "birthDate": "01/01/1980",
+            "dept": {
+                "id": 2, 
+                "descr": "Salles"
+            }, 
+            "contactPhone": "+55 11 98551319",
+            "emailAddress": "mariane@gmail.com",
+            "username": "maryespindula",
+            "password": "Abcd#1234",
+            "language": "pt-br",
+            "timeZone": "Brasilia",
+            "communication": ["EMAIL", "WHATSAPP"],
+            "passwordResetVerif": true,
+            "disabled": "",
+            "groupParticipant": [4]
+        },
+        {
+            "id": 3, 
+            "fisrtName": "Carlos", 
+            "lastName": "Alberto Jr.",
+            "birthDate": "01/01/1990",
+            "dept": {
+                "id": 3, 
+                "descr": "Marketing"
+            }, 
+            "contactPhone": "+55 21 744446666",
+            "emailAddress": "calberto@gmail.com",
+            "username": "calberto",
+            "password": "Abcd#1234",
+            "language": "pt-br",
+            "timeZone": "Brasilia",
+            "communication": ["EMAIL", "SMS", "WHATSAPP"],
+            "passwordResetVerif": true,
+            "disabled": "",
+            "groupParticipant": [4]
+        }
+    ]
+}

@@ -1,0 +1,276 @@
+html,
+body {
+    background-color: #007db8;
+    color: #FFF;
+    min-height: 75rem;
+    padding-top: 2.0rem;
+}
+
+.dropdown-menu {
+    border-radius: 0;
+}
+/* nav-tabs */
+.nav-tabs {
+    border-bottom: 1px solid #FFF;
+    color: rgb(160, 215, 233) !important;
+}
+.nav-tabs .nav-link:focus, 
+.nav-tabs .nav-link:hover {
+    border-color: #FFF #FFF #FFF;
+    color: #FFF;
+}
+.nav-tabs .nav-item.show .nav-link, 
+.nav-tabs .nav-link.active {
+    color: #FFF;
+    background-color: transparent !important;
+    border-color: #FFF #FFF #007db8;
+}
+.nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-radius: 0 !important;
+}
+a {
+    color: rgb(160, 215, 233);
+    text-decoration: none;
+    background-color: transparent;
+}
+.nav-tabs > li:first-of-type > a,
+.nav-tabs > li:first-of-type > a,
+.nav-tabs > li:first-of-type > a:hover,
+.nav-tabs > li:first-of-type > a:active,
+.nav-tabs > li:first-of-type > a:focus{
+    margin-left: 10px;
+}
+/* btn */
+.btn,
+.btn:hover {
+    border-radius: 0;
+    border-color: #FFF;
+}
+/* modal */
+.modal-content {
+    border-radius: 0;
+    border-color: #FFF;
+    background-color: #007db8;
+}
+.modal-header {
+    padding: 0.5rem 0.5rem;
+    border-bottom: transparent;
+    border-radius: 0;
+}
+.modal-footer {
+    padding: 0.5rem 0.5rem;
+    border-top: transparent;
+    border-radius: 0;
+}
+/* input */
+.form-control, 
+select, 
+input[type="file"],
+input[type="date"],
+input[type="text"] {
+    border-radius: 0;
+    background-color: transparent !important;
+    color: #FFF !important;
+    outline: none;
+    box-shadow:none !important;
+    border:1px solid #FFF !important;
+}
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0 !important;
+    border: 1px solid #FFF !important;
+}
+select option {
+    color: #000 !important;
+}
+::-webkit-input-placeholder {
+    color: rgb(160, 215, 233) !important;
+}
+.col-label {
+    text-align: right !important;
+    color: rgb(160, 215, 233) !important;
+}
+@media (min-width: 500px) {
+    .col-label {
+        text-align: left !important;
+    }
+}
+/* alert */
+.alert-danger {
+    color: #fd397a;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.alert-danger button span {
+    color: #fd397a;
+}
+.chk-in-group {
+    width: 200px;
+}
+.chk-in-access {
+    width: 80px;
+}
+.closeBtn:focus {
+    outline: none;
+}
+
+.close{
+    color: gray;
+}
+
+.wrapper {
+    position:relative;
+    margin:0 auto;
+    overflow:hidden;
+    padding:5px;
+    height:50px;
+}
+
+.list {
+    position:absolute;
+    left:0px;
+    top:0px;
+    min-width:3500px;            
+    margin-top:0px;
+}
+
+.list li{
+    display:table-cell;
+    position:relative;
+    text-align:center;
+    cursor:grab;
+    cursor:-webkit-grab;
+    color:#efefef;
+    vertical-align:middle;
+}
+
+.scroller {
+    text-align:center;
+    cursor:pointer;
+    display:none;
+    padding:7px;
+    padding-top:11px;
+    white-space:no-wrap;
+    vertical-align:middle;
+    /*background-color:#fff;*/
+}
+
+.scroller-right{
+    float:right;
+}
+
+.scroller-left {
+    float:left;
+}
+/* table */
+table th,
+table td {
+    color: #FFF;
+    border-top: 1px solid #FFF;
+}
+table tbody tr td i {
+    font-size: 30px;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, .08);
+}
+.w-10{ 
+    width: 10%; 
+}
+.w-20{ 
+    width: 20%; 
+}
+.w-30{ 
+    width: 30%; 
+}
+.w-40{ 
+    width: 40%; 
+}
+.w-50{ 
+    width: 50%; 
+}
+.w-60{ 
+    width: 60%; 
+}
+hr {
+    background-color: #FFF;
+}
+/* Upload Image */
+.avatar-upload {
+    position: relative;
+    max-width: 205px;
+    margin: 5px auto;
+}
+.avatar-upload .avatar-edit {
+    position: absolute;
+    right: 12px;
+    z-index: 1;
+    top: 10px;
+}
+.avatar-upload .avatar-set-upload{
+    position: absolute;
+    right: -6px;
+    z-index: 2;
+    top: 50px;
+}
+.avatar-upload .avatar-edit input {
+    display: none;
+}
+.avatar-upload .avatar-edit input + label,
+.avatar-upload .avatar-set-upload label {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background: #FFFFFF;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+}
+.avatar-upload .avatar-edit input + label:hover,
+.avatar-upload .avatar-set-upload label:hover {
+    background: #f1f1f1;
+    border-color: #d6d6d6;
+}
+
+.avatar-upload .avatar-edit input + label:after{
+    content: "\f040";
+    font-family: 'FontAwesome';
+    color: #757575;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
+.avatar-upload .avatar-set-upload label:after {
+    content: "\f093";
+    font-family: 'FontAwesome';
+    color: #757575;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
+.avatar-upload .avatar-preview {
+    width: 192px;
+    height: 192px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid #F8F8F8;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+.avatar-upload .avatar-preview > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

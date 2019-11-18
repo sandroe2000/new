@@ -1,0 +1,17 @@
+{
+    "accessSettings": {
+        "delete": false,
+        "edit": false,
+        "execute": true
+    },
+    "listProfiles": {
+        "delete": true,
+        "edit": true,
+        "execute": true
+    },
+    "personalInformation": {
+        "delete": true,
+        "edit": true,
+        "execute": true
+    }
+}
