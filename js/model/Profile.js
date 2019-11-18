@@ -1,25 +1,23 @@
 class Profile {
 
-    constructor(id, image, fisrtName, lastName, birthDate, dept, contactPhone,
-                emailAddress, username, password, language, timeZone, 
-                communication, passwordResetVerif, disabled, groupParticipant){
+    constructor(){
 
-        this._id = id;
-        this._image = image;
-        this._fisrtName = fisrtName;
-        this._lastName= lastName;
-        this._birthDate = birthDate;
-        this._dept = dept;
-        this._contactPhone = contactPhone;
-        this._emailAddress = emailAddress;
-        this._username = username;
-        this._password = password;
-        this._language = language;
-        this._timeZone = timeZone;
-        this._communication = communication;
-        this._passwordResetVerif = passwordResetVerif;
-        this._disabled = disabled;
-        this._groupParticipant = groupParticipant;
+        this._id            = document.querySelector('#id');
+        this._image         = document.querySelector('#image');
+        this._fisrtName     = document.querySelector('#fisrtName');
+        this._lastName      = document.querySelector('#lastName');
+        this._birthDate     = document.querySelector('#birthDate');
+        this._dept          = document.querySelector('#dept');
+        this._contactPhone  = document.querySelector('#contactPhone');
+        this._emailAddress  = document.querySelector('#emailAddress');
+        this._username      = document.querySelector('#username');
+        this._password      = document.querySelector('#password');
+        this._language      = document.querySelector('#language');
+        this._timeZone      = document.querySelector('#timeZone');
+        //this._communication = document.querySelector('#communication');
+        this._passwordReset = document.querySelector('#passwordReset');
+        this._disabled      = document.querySelector('#disabled');
+        //this._groupPartici  = document.querySelector('#groupPartici');
     }
 
     get id(){

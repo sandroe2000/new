@@ -18,14 +18,18 @@ class ProfileService {
         this._profiles = await response.json();
         this._profileView.update(this._profiles);
 
+        //--TODO, PRECISA DE UMA SOLUÇÃO MAIS LIMPA PARA ESTE EVENTO/METODO
         $('span.oi.oi-pencil').click(function(event){
+            
             let id = $(event.target.closest('tr')).find('td:eq(0)').text();
-
-            for(let profile in this._profiles){
-                if(profile.id == id){
-                    console.log(profile);
+            let profiles = profileController.profileService.profiles[0].list;
+            
+            //--TODO, DATA-BIND
+            profiles.forEach(p =>{
+                if(p.id == id){
+                    console.log(p);
                 }
-            }
+            });
 
             $('#profileTab li:eq(1) a').tab('show');
         });

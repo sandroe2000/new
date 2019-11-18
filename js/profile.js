@@ -157,7 +157,7 @@ let upload = (event, inputFile, setUpload, slot) => {
     });
 };
 
-
+let profileController;
 $( document ).ready(function() {
-    new ProfileController();
+    profileController = new ProfileController();
 });
