@@ -23,7 +23,7 @@ class ProfileView {
                             <td>${profile.dept.descr}</td>
                             <td>${profile.disabled}</td>
                             <td class="text-right">
-                                <span class="oi oi-pencil mr-2"></span>
+                                <span class="oi oi-pencil mr-2 mouse-hand" onclick="profileController.loadProfileById(${profile.id})"></span>
                             </td>
                         </tr>`).join('')} 
                     </tbody>

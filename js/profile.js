@@ -1,38 +1,3 @@
-(function ($) {
-    var settings;
-    $.fn.zxcvbnProgress = function (options) {
-        settings = $.extend({
-            ratings: ["Very weak", "weak", "OK", "Strong", "Very strong"],
-            progressClasses: ['bg-danger', 'bg-warning', 'bg-warning', 'bg-success', 'bg-success']
-        }, options);
-        var $passwordInput = $(settings.passwordInput),
-            $progress = this;
-        if (!settings.passwordInput) throw new TypeError('Please enter password input');
-        $passwordInput.on('keyup', function () {
-            updateProgress($passwordInput, $progress);
-        });
-        updateProgress($passwordInput, $progress);
-    };
-    function updateProgress($passwordInput, $progress) {
-        var passwordValue = $passwordInput.val();
-        if (passwordValue) {
-            var result = zxcvbn(passwordValue, settings.userInputs),
-                score = result.score,
-                scorePercentage = (score + 1) * 20;
-            $progress.css('width', scorePercentage + '%');
-            $progress.removeClass(settings.progressClasses.join(' ')).addClass(settings.progressClasses[score]).text(settings.ratings[score]);
-        } else {
-            $progress.css('width', 0 + '%');
-            $progress.removeClass(settings.progressClasses.join(' ')).text('');
-        }
-    }
-})(jQuery);
-
-//--Password Test Strength
-$('#progress').zxcvbnProgress({
-    passwordInput: '#newPassword'
-});
-
 //--Nav-tabs Horizontal scroll
 var hidWidth;
 var scrollBarWidths = 40;
@@ -158,6 +123,13 @@ let upload = (event, inputFile, setUpload, slot) => {
 };
 
 let profileController;
+
 $( document ).ready(function() {
+    
     profileController = new ProfileController();
+    
+    //--Password Test Strength
+    $('#password').strengthMeter('progressBar', {
+        container: $('#meter')
+    });
 });
