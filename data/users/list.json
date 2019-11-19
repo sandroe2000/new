@@ -2,9 +2,9 @@
     "list": [
         {
             "id": 1, 
-            "fisrtName": "Keanu", 
+            "firstName": "Keanu", 
             "lastName": "Reeves",
-            "birthDate": "01/01/1980",
+            "birthDate": "1981-01-29",
             "dept": {
                 "id": 1, 
                 "descr": "Development"
@@ -13,8 +13,8 @@
             "emailAddress": "keanu@gmail.com",
             "username": "keanu",
             "password": "Abc123#asdfg",
-            "language": "pt-br",
-            "timeZone": "Brasilia",
+            "language": "en",
+            "timeZone": "Sydney",
             "communication": ["EMAIL", "PHONE"],
             "passwordResetVerif": true,
             "disabled": "",
@@ -22,9 +22,9 @@
         },
         {
             "id": 2, 
-            "fisrtName": "Mariane", 
+            "firstName": "Mariane", 
             "lastName": "Espindula",
-            "birthDate": "01/01/1980",
+            "birthDate": "1980-01-28",
             "dept": {
                 "id": 2, 
                 "descr": "Salles"
@@ -42,9 +42,9 @@
         },
         {
             "id": 3, 
-            "fisrtName": "Carlos", 
+            "firstName": "Carlos", 
             "lastName": "Alberto Jr.",
-            "birthDate": "01/01/1990",
+            "birthDate": "1990-01-30",
             "dept": {
                 "id": 3, 
                 "descr": "Marketing"

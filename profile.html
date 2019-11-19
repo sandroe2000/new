@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/open-iconic/font/css/open-iconic-bootstrap.min.css" />
     <link rel="stylesheet" href="css/profile.css" />
     
     <title>WoolaWeaver - SaaS</title>
@@ -133,7 +133,7 @@
                             <label class="mb-0">Fisrt Name</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <input id="firstName" type="text" class="form-control" />
+                            <input id="firstName" data-bind="firstName" type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="row">
@@ -141,7 +141,7 @@
                             <label class="mb-0">Last Name</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <input id="lastName" type="text" class="form-control" />
+                            <input id="lastName" data-bind="lastName" type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="row">
@@ -149,7 +149,7 @@
                             <label class="mb-0">birth date</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <input id="birthDate" type="date" class="form-control" />
+                            <input id="birthDate" data-bind="birthDate" type="date" class="form-control" />
                         </div>
                     </div>
 
@@ -163,7 +163,7 @@
                             <label class="mb-0">Contact Phone</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <input id="contactPhone" type="text" class="form-control" />
+                            <input id="contactPhone" data-bind="contactPhone" type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="row">
@@ -171,7 +171,7 @@
                             <label class="mb-0">Email Address</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <input id="emailAddress" type="text" class="form-control" />
+                            <input id="emailAddress" data-bind="emailAddress" type="text" class="form-control" />
                         </div>
                     </div>
                     <!--/: Personal Information-->
@@ -190,7 +190,7 @@
                             <label class="mb-0">Username</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <input type="text" class="form-control" />
+                            <input id="username" data-bind="username" type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="row">
@@ -198,7 +198,7 @@
                             <label class="mb-0">Language</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <select id="language" class="form-control">
+                            <select id="language" data-bind="language" class="form-control">
                                 <option>Select Language...</option>
                                 <option value="id">Bahasa Indonesia - Indonesian</option>
                                 <option value="msa">Bahasa Melayu - Malay</option>
@@ -220,7 +220,7 @@
                                 <option value="nl">Nederlands - Dutch</option>
                                 <option value="no">Norsk - Norwegian</option>
                                 <option value="pl">Polski - Polish</option>
-                                <option value="pr-br" selected="">Português - Brazilian</option>
+                                <option value="pt-br" selected="">Português - Brazilian</option>
                                 <option value="pt">Português - Portuguese</option>
                                 <option value="ro">Română - Romanian</option>
                                 <option value="sk">Slovenčina - Slovak</option>
@@ -256,7 +256,7 @@
                             <label>Time Zone</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <select id="timeZone" class="form-control">
+                            <select id="timeZone" data-bind="timeZone" class="form-control">
                                 <option data-offset="-39600" value="International Date Line West">(GMT-11:00) International Date Line West</option>
                                 <option data-offset="-39600" value="Midway Island">(GMT-11:00) Midway Island</option>
                                 <option data-offset="-39600" value="Samoa">(GMT-11:00) Samoa</option>
@@ -409,19 +409,19 @@
                         </div>
                         <div class="col-md-9 mt-2">
                             <div class="custom-control custom-checkbox mr-sm-2">
-                                <input type="checkbox" class="custom-control-input" id="communicationEmail">
+                                <input type="checkbox" class="custom-control-input" id="communicationEmail" data-bind="communication" value="EMAIL"/>
                                 <label class="custom-control-label" for="communicationEmail">E-mail</label>
                             </div>
                             <div class="custom-control custom-checkbox mr-sm-2">
-                                <input type="checkbox" class="custom-control-input" id="communicationSMS">
+                                <input type="checkbox" class="custom-control-input" id="communicationSMS" data-bind="communication" value="SMS"/>
                                 <label class="custom-control-label" for="communicationSMS">SMS</label>
                             </div>
                             <div class="custom-control custom-checkbox mr-sm-2">
-                                <input type="checkbox" class="custom-control-input" id="communicationWhatsApp">
+                                <input type="checkbox" class="custom-control-input" id="communicationWhatsApp" data-bind="communication" value="WHATSAPP"/>
                                 <label class="custom-control-label" for="communicationWhatsApp">WhatsApp</label>
                             </div>
                             <div class="custom-control custom-checkbox mr-sm-2">
-                                <input type="checkbox" class="custom-control-input" id="communicationPhone">
+                                <input type="checkbox" class="custom-control-input" id="communicationPhone" data-bind="communication" value="PHONE"/>
                                 <label class="custom-control-label" for="communicationPhone">Phone</label>
                             </div>
                         </div>
@@ -486,7 +486,7 @@
                             <label class="mb-0">Current Password</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <input id="currentPassword" type="password" class="form-control" />
+                            <input id="old-password" type="password" class="form-control" />
                             <small id="passwordlHelp" class="form-text text-muted"><a href="#">Forgot password ?</a></small>
                         </div>
                     </div>
@@ -495,8 +495,8 @@
                             <label class="mb-0">New Password</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <input id="password" type="password" class="form-control" />
-                            <div id="meter" class="progress mt-2">
+                            <input id="new-password" type="password" class="form-control" />
+                            <div id="passwordMeter" class="progress mt-2">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
@@ -506,7 +506,7 @@
                             <label class="mb-0">Verify Password</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <input type="verifyPassword" class="form-control" />
+                            <input type="confirm-Password" class="form-control" />
                         </div>
                     </div>
 
@@ -744,13 +744,14 @@
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js" integrity="sha256-fTuUgtT7O2rqoImwjrhDgbXTKUwyxxujIMRIK7TbuNU=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha256-CjSoeELFOcH0/uxWu6mC/Vlrc1AARqbm/jiiImDGV3s=" crossorigin="anonymous"></script>
+    <script src="assets/jquery/dist/jquery.min.js"></script>
+    <script src="assets/popper.js/dist/umd/popper.min.js"></script>
+    <script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="assets/bootstrap-strength-meter/dist/js/password-score.js"></script>
     <script src="assets/bootstrap-strength-meter/dist/js/password-score-options.js"></script>
     <script src="assets/bootstrap-strength-meter/dist/js/bootstrap-strength-meter.js"></script>
     
+    <script src="js/model/Scope.js"></script>
     <script src="js/model/Profile.js"></script>
     <script src="js/service/ProfileService.js"></script>
     <script src="js/view/ProfileView.js"></script>

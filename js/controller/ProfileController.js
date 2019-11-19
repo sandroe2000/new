@@ -2,19 +2,20 @@ class ProfileController {
 
     constructor(){
 
-        this._profileService = new ProfileService();
-        this._profileService.findAll();        
-    }
-
-    get profileService(){
-        return this._profileService;
+        this.scope = {};
+        this.profile = {};
+        this.profileService = new ProfileService();
+        this.profileService.findAll();        
     }
 
     loadProfileById(id){
-         debugger;
-        //--TODO, DATA-BIND
-        let profile = this._profileService.findById(id);
+
+        this.profile = new Profile( this.profileService.findById(id) );
         $('#profileTab li:eq(1) a').tab('show');
-        console.log(profile);
+        
+        //-- TWO WAY DATA BIND
+        this.scope = new Scope();
+        this.scope.init( this.profile.profile );
+        console.log(this.profile);
     }
 }

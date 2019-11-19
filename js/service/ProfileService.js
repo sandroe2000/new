@@ -2,13 +2,8 @@ class ProfileService {
 
     constructor(){
 
-        this._profiles = [];
-        this._profileView = new ProfileView( document.querySelector('#tableProfileView') );
-    }
-
-    get profiles() {
-        
-        return [].concat(this._profiles);
+        this.profiles = [];
+        this.profileView = new ProfileView( document.querySelector('#tableProfileView') );
     }
 
     async findAll(){
@@ -16,13 +11,13 @@ class ProfileService {
         const response = await fetch('data/users/list.json', {
             method: 'GET'
         });
-        this._profiles = await response.json();
-        this._profileView.update(this._profiles);
+        this.profiles =await response.json();
+        this.profileView.update(this.profiles);
     }
 
     findById(id){
 
-        let profiles = profileController.profileService.profiles[0].list;
+        let profiles = profileController.profileService.profiles.list;
         let result = {};
 
         profiles.forEach(profile =>{

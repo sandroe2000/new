@@ -129,7 +129,7 @@ $( document ).ready(function() {
     profileController = new ProfileController();
     
     //--Password Test Strength
-    $('#password').strengthMeter('progressBar', {
-        container: $('#meter')
+    $('#newPassword').strengthMeter('progressBar', {
+        container: $('#passwordMeter')
     });
 });

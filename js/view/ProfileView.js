@@ -19,7 +19,7 @@ class ProfileView {
                     <tbody>
                         ${model.list.map(profile => `<tr>
                             <td>${profile.id}</td>
-                            <td>${profile.fisrtName} ${profile.lastName}</td>
+                            <td>${profile.firstName} ${profile.lastName}</td>
                             <td>${profile.dept.descr}</td>
                             <td>${profile.disabled}</td>
                             <td class="text-right">
