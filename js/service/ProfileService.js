@@ -20,7 +20,7 @@ class ProfileService {
         let profiles = profileController.profileService.profiles.list;
         let result = {};
 
-        profiles.forEach(profile =>{
+        profiles.forEach(profile => {
             if(profile.id == id){
                 result = profile;
             }
