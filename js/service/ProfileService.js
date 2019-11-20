@@ -11,7 +11,7 @@ class ProfileService {
         const response = await fetch('data/users/list.json', {
             method: 'GET'
         });
-        this.profiles =await response.json();
+        this.profiles = await response.json();
         this.profileView.update(this.profiles);
     }
 
