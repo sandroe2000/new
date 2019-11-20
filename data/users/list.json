@@ -16,9 +16,60 @@
             "language": "en",
             "timeZone": "Sydney",
             "communication": ["EMAIL", "PHONE"],
-            "passwordResetVerif": true,
+            "passwordResetVerif": ["S"],
             "disabled": "",
-            "groupParticipant": [1, 2, 3]
+            "groupParticipant": [
+                {
+                    "id": 1, 
+                    "descr": "Administrators",
+                    "accessGroup": [
+                        {
+                        "id": 1, 
+                        "delete": 1, 
+                        "edit": 1, 
+                        "execute": 1
+                        },{
+                            "id": 2,  
+                            "edit": 2
+                        }
+                    ]
+                },{
+                    "id": 4,  
+                    "descr": "Developer",
+                    "accessGroup": [
+                        {
+                            "id": 3, 
+                            "execute": 3
+                        }
+                    ]
+                },{
+                    "id": 7, 
+                    "descr": "System Analyst",
+                    "accessGroup": [
+                        {
+                            "id": 5, 
+                            "delete": 5
+                        }
+                    ]
+                }
+            ],
+            "accessGroup": [
+                {
+                    "id": 1, 
+                    "delete": 1, 
+                    "edit": 1, 
+                    "execute": 1
+                },{
+                    "id": 2,  
+                    "edit": 2
+                },{
+                    "id": 3, 
+                    "execute": 3
+                },{
+                    "id": 5, 
+                    "delete": 5
+                }
+            ]
         },
         {
             "id": 2, 
@@ -35,10 +86,15 @@
             "password": "Abcd#1234",
             "language": "pt-br",
             "timeZone": "Brasilia",
-            "communication": ["EMAIL", "WHATSAPP"],
-            "passwordResetVerif": true,
+            "communication": ["WHATSAPP"],
+            "passwordResetVerif": ["S"],
             "disabled": "",
-            "groupParticipant": [4]
+            "groupParticipant": [
+                {
+                    "id": 3, 
+                    "execute": 3
+                }
+            ]
         },
         {
             "id": 3, 
@@ -56,9 +112,14 @@
             "language": "pt-br",
             "timeZone": "Brasilia",
             "communication": ["EMAIL", "SMS", "WHATSAPP"],
-            "passwordResetVerif": true,
+            "passwordResetVerif": [],
             "disabled": "",
-            "groupParticipant": [4]
+            "groupParticipant": [
+                {
+                    "id": 3, 
+                    "execute": 3
+                }
+            ]
         }
     ]
 }

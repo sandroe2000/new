@@ -52,7 +52,7 @@
     <!--:: Container-->
     <div class="container">
 
-        <form>
+        <form id="frmProfile" data-frm-bind="frmProfile">
 
             <!--:: Content-->
             <div class="scroller scroller-left mt-2"><i class="fa fa-chevron-left"></i></div>
@@ -446,7 +446,7 @@
                         </div>
                         <div class="col-md-9 mt-2">
                             <div class="custom-control custom-checkbox mr-sm-2">
-                                <input type="checkbox" class="custom-control-input" id="passwordReset">
+                                <input type="checkbox" class="custom-control-input" id="passwordReset" data-bind="passwordResetVerif" value="S" />
                                 <label class="custom-control-label" for="passwordReset">Require personal information to reset your password.</label>
                             </div>
                             <p class="font-italic">For extra security, this requires you to confirm your email or phone number when you reset your password. <a href="#" data-toggle="modal" data-target="#exampleModal">Learm more</a></p>
@@ -525,31 +525,31 @@
                         </div>
                         <div class="col-md-8 mt-2">
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
-                                <input type="checkbox" class="custom-control-input" id="customChkGrp1">
+                                <input type="checkbox" class="custom-control-input" id="customChkGrp1" data-bind="groupParticipant[]id" value="1" />
                                 <label class="custom-control-label" for="customChkGrp1">Administrators</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
-                                <input type="checkbox" class="custom-control-input" id="customChkGrp2">
+                                <input type="checkbox" class="custom-control-input" id="customChkGrp2" data-bind="groupParticipant[]id" value="2" />
                                 <label class="custom-control-label" for="customChkGrp2">System Analyst</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
-                                <input type="checkbox" class="custom-control-input" id="customChkGrp3">
+                                <input type="checkbox" class="custom-control-input" id="customChkGrp3" data-bind="groupParticipant[]id" value="3" />
                                 <label class="custom-control-label" for="customChkGrp3">Developer</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
-                                <input type="checkbox" class="custom-control-input" id="customChkGrp4">
+                                <input type="checkbox" class="custom-control-input" id="customChkGrp4" data-bind="groupParticipant[]id" value="4" />
                                 <label class="custom-control-label" for="customChkGrp4">Manager</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
-                                    <input type="checkbox" class="custom-control-input" id="customChkGrp5">
+                                    <input type="checkbox" class="custom-control-input" id="customChkGrp5" data-bind="groupParticipant[]id" value="5" />
                                     <label class="custom-control-label" for="customChkGrp5">Coordinator</label>
                                 </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
-                                <input type="checkbox" class="custom-control-input" id="customChkGrp6">
+                                <input type="checkbox" class="custom-control-input" id="customChkGrp6" data-bind="groupParticipant[]id" value="6" />
                                 <label class="custom-control-label" for="customChkGrp6">Operations Analyst</label>
                             </div>                        
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
-                                <input type="checkbox" class="custom-control-input" id="customChkGrp7">
+                                <input type="checkbox" class="custom-control-input" id="customChkGrp7" data-bind="groupParticipant[]id" value="7" />
                                 <label class="custom-control-label" for="customChkGrp7">Attendant</label>
                             </div>
                         </div>
@@ -569,7 +569,7 @@
                         </div>                
                         <div class="col-md-8">
                             <select class="form-control">
-                                <option value="">Select an option</option>
+                                <option value="">All</option>
                                 <option value="1">Administrators</option>
                                 <option value="2">Attendant</option>
                                 <option value="3">Coordinator</option>
@@ -592,15 +592,15 @@
                                 <label class="custom-control-label" for="customChkAccessAll_1">All</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="customChkAccessDelete_1">
+                                <input type="checkbox" class="custom-control-input" id="customChkAccessDelete_1" data-bind="accessGroup[]delete" value="1" />
                                 <label class="custom-control-label" for="customChkAccessDelete_1">Delete</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="customChkAccessEdit_1">
+                                <input type="checkbox" class="custom-control-input" id="customChkAccessEdit_1" data-bind="accessGroup[]edit" value="1" />
                                 <label class="custom-control-label" for="customChkAccessEdit_1">Edit</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="customChkAccessExecute_1">
+                                <input type="checkbox" class="custom-control-input" id="customChkAccessExecute_1" data-bind="accessGroup[]execute" value="1" />
                                 <label class="custom-control-label" for="customChkAccessExecute_1">Execute</label>
                             </div>
                         </div>
@@ -618,15 +618,15 @@
                                 <label class="custom-control-label" for="customChkAccessAll_2">All</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="customChkAccessDelete_2">
+                                <input type="checkbox" class="custom-control-input" id="customChkAccessDelete_2" data-bind="accessGroup[]delete" value="2" />
                                 <label class="custom-control-label" for="customChkAccessDelete_2">Delete</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="customChkAccessEdit_2">
+                                <input type="checkbox" class="custom-control-input" id="customChkAccessEdit_2" data-bind="accessGroup[]edit" value="2" />
                                 <label class="custom-control-label" for="customChkAccessEdit_2">Edit</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="customChkAccessExecute_2">
+                                <input type="checkbox" class="custom-control-input" id="customChkAccessExecute_2" data-bind="accessGroup[]execute" value="2" />
                                 <label class="custom-control-label" for="customChkAccessExecute_2">Execute</label>
                             </div>
                         </div>
@@ -644,15 +644,15 @@
                                 <label class="custom-control-label" for="customChkAccessAll_3">All</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="customChkAccessDelete_3">
+                                <input type="checkbox" class="custom-control-input" id="customChkAccessDelete_3" data-bind="accessGroup[]delete" value="3" />
                                 <label class="custom-control-label" for="customChkAccessDelete_3">Delete</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="customChkAccessEdit_3">
+                                <input type="checkbox" class="custom-control-input" id="customChkAccessEdit_3" data-bind="accessGroup[]edit" value="3" />
                                 <label class="custom-control-label" for="customChkAccessEdit_3">Edit</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="customChkAccessExecute_3">
+                                <input type="checkbox" class="custom-control-input" id="customChkAccessExecute_3" data-bind="accessGroup[]execute" value="3" />
                                 <label class="custom-control-label" for="customChkAccessExecute_3">Execute</label>
                             </div>
                         </div>
@@ -670,15 +670,15 @@
                                 <label class="custom-control-label" for="customChkAccessAll_4">All</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="customChkAccessDelete_4">
+                                <input type="checkbox" class="custom-control-input" id="customChkAccessDelete_4" data-bind="accessGroup[]delete" value="4" />
                                 <label class="custom-control-label" for="customChkAccessDelete_4">Delete</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="customChkAccessEdit_4">
+                                <input type="checkbox" class="custom-control-input" id="customChkAccessEdit_4" data-bind="accessGroup[]edit" value="4" />
                                 <label class="custom-control-label" for="customChkAccessEdit_4">Edit</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="customChkAccessExecute_4">
+                                <input type="checkbox" class="custom-control-input" id="customChkAccessExecute_4" data-bind="accessGroup[]execute" value="4" />
                                 <label class="custom-control-label" for="customChkAccessExecute_4">Execute</label>
                             </div>
                         </div>
@@ -696,15 +696,15 @@
                                 <label class="custom-control-label" for="customChkAccessAll_5">All</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="customChkAccessDelete_5">
+                                <input type="checkbox" class="custom-control-input" id="customChkAccessDelete_5" data-bind="accessGroup[]delete" value="5" />
                                 <label class="custom-control-label" for="customChkAccessDelete_5">Delete</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="customChkAccessEdit_5">
+                                <input type="checkbox" class="custom-control-input" id="customChkAccessEdit_5" data-bind="accessGroup[]edit" value="5" />
                                 <label class="custom-control-label" for="customChkAccessEdit_5">Edit</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="customChkAccessExecute_5">
+                                <input type="checkbox" class="custom-control-input" id="customChkAccessExecute_5" data-bind="accessGroup[]execute" value="5" />
                                 <label class="custom-control-label" for="customChkAccessExecute_5">Execute</label>
                             </div>
                         </div>

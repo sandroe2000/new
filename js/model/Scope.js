@@ -6,6 +6,7 @@ class Scope {
 
     init(data){
         
+        this.clean();
         let elements = document.querySelectorAll('[data-bind]');
 
         elements.forEach(element => {            
@@ -17,9 +18,23 @@ class Scope {
             }
 
             if( element.type === "checkbox" ){
-                data[propToBind].forEach(chk => {
-                    if(element.value == chk){
-                        element.checked = true;
+                
+                let bind = propToBind.split('[]');
+                data[bind[0]].forEach(chk => {
+
+                    if(bind.length==2){
+                        
+                        data[bind[0]].forEach(item => {
+                            if( element.value == item[bind[1]]){
+                                element.checked = true;
+                            }
+                        });
+
+                    }else{
+
+                        if(element.value == chk){
+                            element.checked = true;
+                        }
                     }
                 });
             }
@@ -41,6 +56,11 @@ class Scope {
                 }
             });
         });
+    }
+
+    clean(){
+
+        document.querySelector('[data-frm-bind]').reset();
     }
 }
 
