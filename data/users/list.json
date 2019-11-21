@@ -5,10 +5,6 @@
             "firstName": "Keanu", 
             "lastName": "Reeves",
             "birthDate": "1981-01-29",
-            "dept": {
-                "id": 1, 
-                "descr": "Development"
-            }, 
             "contactPhone": "+55 21 991388372",
             "emailAddress": "keanu@gmail.com",
             "username": "keanu",
@@ -29,11 +25,7 @@
             "id": 2, 
             "firstName": "Mariane", 
             "lastName": "Espindula",
-            "birthDate": "1980-01-28",
-            "dept": {
-                "id": 2, 
-                "descr": "Salles"
-            }, 
+            "birthDate": "1980-01-28", 
             "contactPhone": "+55 11 98551319",
             "emailAddress": "mariane@gmail.com",
             "username": "maryespindula",
@@ -51,10 +43,6 @@
             "firstName": "Carlos", 
             "lastName": "Alberto Jr.",
             "birthDate": "1990-01-30",
-            "dept": {
-                "id": 3, 
-                "descr": "Marketing"
-            }, 
             "contactPhone": "+55 21 744446666",
             "emailAddress": "calberto@gmail.com",
             "username": "calberto",

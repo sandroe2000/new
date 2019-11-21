@@ -11,18 +11,22 @@ class ProfileView {
                         <tr>
                             <th class="w-10">#</th>
                             <th class="w-40">Name</th>
-                            <th class="w-20">Dept.</th>
+                            <th class="w-20">Groups</th>
                             <th class="w-10">Disabled</th>
                             <th class="w-10"></th>
                         </tr>
                     </thead>
                     <tbody>
                         ${model.list.map(profile => `<tr data-id="${profile.id}">
-                            <td>${profile.id}</td>
-                            <td>${profile.firstName} ${profile.lastName}</td>
-                            <td>${profile.dept.descr}</td>
-                            <td>${profile.disabled}</td>
-                            <td class="text-right">
+                            <td class="w-10">${profile.id}</td>
+                            <td class="w-40" title="${profile.firstName} ${profile.lastName}">
+                                ${profile.firstName} ${profile.lastName}
+                            </td>
+                            <td class="w-20" title="${profile.groupParticipant}">
+                                ${profile.groupParticipant}
+                            </td>
+                            <td class="w-10">${profile.disabled}</td>
+                            <td class="w-10 text-right">
                                 <span class="oi oi-pencil mr-2 ico-mouse-hand"></span>
                             </td>
                         </tr>`).join('')} 
