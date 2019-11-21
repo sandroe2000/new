@@ -6,6 +6,9 @@ class ProfileController {
         this.profile = {};
         this.profileService = new ProfileService();
         this.profileService.findAll();        
+        this.profileService.setGroups();
+        this.profileService.setTimeZone();
+        this.profileService.setLanguage();
     }
 
     loadProfileById(id){

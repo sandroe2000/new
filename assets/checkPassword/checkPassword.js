@@ -1,5 +1,5 @@
 function checkPasswordStrength() {
-    debugger;
+
     var number = /([0-9])/;
     var lowcase = /([a-z])/;
     var uppercase = /([A-Z])/;

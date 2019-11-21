@@ -1,0 +1,196 @@
+{
+    "list":[
+       {
+          "value":"id",
+          "descr":"Bahasa Indonesia - Indonesian"
+       },
+       {
+          "value":"msa",
+          "descr":"Bahasa Melayu - Malay"
+       },
+       {
+          "value":"ca",
+          "descr":"Català - Catalan"
+       },
+       {
+          "value":"cs",
+          "descr":"Čeština - Czech"
+       },
+       {
+          "value":"da",
+          "descr":"Dansk - Danish"
+       },
+       {
+          "value":"de",
+          "descr":"Deutsch - German"
+       },
+       {
+          "value":"en",
+          "descr":"English"
+       },
+       {
+          "value":"en-gb",
+          "descr":"English UK - British English"
+       },
+       {
+          "value":"es",
+          "descr":"Español - Spanish"
+       },
+       {
+          "value":"eu",
+          "descr":"Euskara - Basque (beta)"
+       },
+       {
+          "value":"fil",
+          "descr":"Filipino"
+       },
+       {
+          "value":"fr",
+          "descr":"Français - French"
+       },
+       {
+          "value":"ga",
+          "descr":"Gaeilge - Irish (beta)"
+       },
+       {
+          "value":"gl",
+          "descr":"Galego - Galician (beta)"
+       },
+       {
+          "value":"hr",
+          "descr":"Hrvatski - Croatian"
+       },
+       {
+          "value":"it",
+          "descr":"Italiano - Italian"
+       },
+       {
+          "value":"hu",
+          "descr":"Magyar - Hungarian"
+       },
+       {
+          "value":"nl",
+          "descr":"Nederlands - Dutch"
+       },
+       {
+          "value":"no",
+          "descr":"Norsk - Norwegian"
+       },
+       {
+          "value":"pl",
+          "descr":"Polski - Polish"
+       },
+       {
+          "value":"pt-br",
+          "descr":"Português - Brazilian"
+       },
+       {
+          "value":"pt",
+          "descr":"Português - Portuguese"
+       },
+       {
+          "value":"ro",
+          "descr":"Română - Romanian"
+       },
+       {
+          "value":"sk",
+          "descr":"Slovenčina - Slovak"
+       },
+       {
+          "value":"fi",
+          "descr":"Suomi - Finnish"
+       },
+       {
+          "value":"sv",
+          "descr":"Svenska - Swedish"
+       },
+       {
+          "value":"vi",
+          "descr":"Tiếng Việt - Vietnamese"
+       },
+       {
+          "value":"tr",
+          "descr":"Türkçe - Turkish"
+       },
+       {
+          "value":"el",
+          "descr":"Ελληνικά - Greek"
+       },
+       {
+          "value":"bg",
+          "descr":"Български език - Bulgarian"
+       },
+       {
+          "value":"ru",
+          "descr":"Русский - Russian"
+       },
+       {
+          "value":"sr",
+          "descr":"Српски - Serbian"
+       },
+       {
+          "value":"uk",
+          "descr":"Українська мова - Ukrainian"
+       },
+       {
+          "value":"he",
+          "descr":"עִבְרִית - Hebrew"
+       },
+       {
+          "value":"ur",
+          "descr":"اردو - Urdu (beta)"
+       },
+       {
+          "value":"ar",
+          "descr":"العربية - Arabic"
+       },
+       {
+          "value":"fa",
+          "descr":"فارسی - Persian"
+       },
+       {
+          "value":"mr",
+          "descr":"मराठी - Marathi"
+       },
+       {
+          "value":"hi",
+          "descr":"हिन्दी - Hindi"
+       },
+       {
+          "value":"bn",
+          "descr":"বাংলা - Bangla"
+       },
+       {
+          "value":"gu",
+          "descr":"ગુજરાતી - Gujarati"
+       },
+       {
+          "value":"ta",
+          "descr":"தமிழ் - Tamil"
+       },
+       {
+          "value":"kn",
+          "descr":"ಕನ್ನಡ - Kannada"
+       },
+       {
+          "value":"th",
+          "descr":"ภาษาไทย - Thai"
+       },
+       {
+          "value":"ko",
+          "descr":"한국어 - Korean"
+       },
+       {
+          "value":"ja",
+          "descr":"日本語 - Japanese"
+       },
+       {
+          "value":"zh-cn",
+          "descr":"简体中文 - Simplified Chinese"
+       },
+       {
+          "value":"zh-tw",
+          "descr":"繁體中文 - Traditional Chinese"
+       }
+    ]
+ }

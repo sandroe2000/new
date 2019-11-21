@@ -1,25 +1,25 @@
 {
-    "groups":[
+    "list":[
         {
-            "id": 1,
+            "value": "ADMINISTRATORS",
             "descr": "Administrators"
         },{
-            "id": 2,
+            "value": "ATTENDANT",
             "descr": "Attendant"
         },{
-            "id": 3,
+            "value": "COORDINATOR",
             "descr": "Coordinator"
         },{
-            "id": 4,
+            "value": "Developer",
             "descr": "Developer"
         },{
-            "id": 5,
+            "value": "MANAGER",
             "descr": "Manager"
         },{
-            "id": 6,
+            "value": "OPERATIONS_ANALYST",
             "descr": "Operations Analyst"
         },{
-            "id": 7,
+            "value": "SYSTEM_ANALYST",
             "descr": "System Analyst"
         }
     ]

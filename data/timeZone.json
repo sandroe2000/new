@@ -1,0 +1,719 @@
+{
+    "list":[
+       {
+          "dataOffset":"-39600",
+          "value":"International Date Line West",
+          "descr":"(GMT-11:00) International Date Line West"
+       },
+       {
+          "dataOffset":"-39600",
+          "value":"Midway Island",
+          "descr":"(GMT-11:00) Midway Island"
+       },
+       {
+          "dataOffset":"-39600",
+          "value":"Samoa",
+          "descr":"(GMT-11:00) Samoa"
+       },
+       {
+          "dataOffset":"-36000",
+          "value":"Hawaii",
+          "descr":"(GMT-10:00) Hawaii"
+       },
+       {
+          "dataOffset":"-28800",
+          "value":"Alaska",
+          "descr":"(GMT-08:00) Alaska"
+       },
+       {
+          "dataOffset":"-25200",
+          "value":"Pacific Time (US &amp; Canada)",
+          "descr":"(GMT-07:00) Pacific Time (US &amp; Canada)"
+       },
+       {
+          "dataOffset":"-25200",
+          "value":"Tijuana",
+          "descr":"(GMT-07:00) Tijuana"
+       },
+       {
+          "dataOffset":"-25200",
+          "value":"Arizona",
+          "descr":"(GMT-07:00) Arizona"
+       },
+       {
+          "dataOffset":"-21600",
+          "value":"Mountain Time (US &amp; Canada)",
+          "descr":"(GMT-06:00) Mountain Time (US &amp; Canada)"
+       },
+       {
+          "dataOffset":"-21600",
+          "value":"Chihuahua",
+          "descr":"(GMT-06:00) Chihuahua"
+       },
+       {
+          "dataOffset":"-21600",
+          "value":"Mazatlan",
+          "descr":"(GMT-06:00) Mazatlan"
+       },
+       {
+          "dataOffset":"-21600",
+          "value":"Saskatchewan",
+          "descr":"(GMT-06:00) Saskatchewan"
+       },
+       {
+          "dataOffset":"-21600",
+          "value":"Central America",
+          "descr":"(GMT-06:00) Central America"
+       },
+       {
+          "dataOffset":"-18000",
+          "value":"Central Time (US &amp; Canada)",
+          "descr":"(GMT-05:00) Central Time (US &amp; Canada)"
+       },
+       {
+          "dataOffset":"-18000",
+          "value":"Guadalajara",
+          "descr":"(GMT-05:00) Guadalajara"
+       },
+       {
+          "dataOffset":"-18000",
+          "value":"Mexico City",
+          "descr":"(GMT-05:00) Mexico City"
+       },
+       {
+          "dataOffset":"-18000",
+          "value":"Monterrey",
+          "descr":"(GMT-05:00) Monterrey"
+       },
+       {
+          "dataOffset":"-18000",
+          "value":"Bogota",
+          "descr":"(GMT-05:00) Bogota"
+       },
+       {
+          "dataOffset":"-18000",
+          "value":"Lima",
+          "descr":"(GMT-05:00) Lima"
+       },
+       {
+          "dataOffset":"-18000",
+          "value":"Quito",
+          "descr":"(GMT-05:00) Quito"
+       },
+       {
+          "dataOffset":"-14400",
+          "value":"Eastern Time (US &amp; Canada)",
+          "descr":"(GMT-04:00) Eastern Time (US &amp; Canada)"
+       },
+       {
+          "dataOffset":"-14400",
+          "value":"Indiana (East)",
+          "descr":"(GMT-04:00) Indiana (East)"
+       },
+       {
+          "dataOffset":"-14400",
+          "value":"Caracas",
+          "descr":"(GMT-04:00) Caracas"
+       },
+       {
+          "dataOffset":"-14400",
+          "value":"La Paz",
+          "descr":"(GMT-04:00) La Paz"
+       },
+       {
+          "dataOffset":"-14400",
+          "value":"Georgetown",
+          "descr":"(GMT-04:00) Georgetown"
+       },
+       {
+          "dataOffset":"-10800",
+          "value":"Atlantic Time (Canada)",
+          "descr":"(GMT-03:00) Atlantic Time (Canada)"
+       },
+       {
+          "dataOffset":"-10800",
+          "value":"Santiago",
+          "descr":"(GMT-03:00) Santiago"
+       },
+       {
+          "dataOffset":"-10800",
+          "value":"Brasilia",
+          "descr":"(GMT-03:00) Brasilia"
+       },
+       {
+          "dataOffset":"-10800",
+          "value":"Buenos Aires",
+          "descr":"(GMT-03:00) Buenos Aires"
+       },
+       {
+          "dataOffset":"-9000",
+          "value":"Newfoundland",
+          "descr":"(GMT-02:30) Newfoundland"
+       },
+       {
+          "dataOffset":"-7200",
+          "value":"Greenland",
+          "descr":"(GMT-02:00) Greenland"
+       },
+       {
+          "dataOffset":"-7200",
+          "value":"Mid-Atlantic",
+          "descr":"(GMT-02:00) Mid-Atlantic"
+       },
+       {
+          "dataOffset":"-3600",
+          "value":"Cape Verde Is.",
+          "descr":"(GMT-01:00) Cape Verde Is."
+       },
+       {
+          "dataOffset":"0",
+          "value":"Azores",
+          "descr":"(GMT) Azores"
+       },
+       {
+          "dataOffset":"0",
+          "value":"Monrovia",
+          "descr":"(GMT) Monrovia"
+       },
+       {
+          "dataOffset":"0",
+          "value":"UTC",
+          "descr":"(GMT) UTC"
+       },
+       {
+          "dataOffset":"3600",
+          "value":"Dublin",
+          "descr":"(GMT+01:00) Dublin"
+       },
+       {
+          "dataOffset":"3600",
+          "value":"Edinburgh",
+          "descr":"(GMT+01:00) Edinburgh"
+       },
+       {
+          "dataOffset":"3600",
+          "value":"Lisbon",
+          "descr":"(GMT+01:00) Lisbon"
+       },
+       {
+          "dataOffset":"3600",
+          "value":"London",
+          "descr":"(GMT+01:00) London"
+       },
+       {
+          "dataOffset":"3600",
+          "value":"Casablanca",
+          "descr":"(GMT+01:00) Casablanca"
+       },
+       {
+          "dataOffset":"3600",
+          "value":"West Central Africa",
+          "descr":"(GMT+01:00) West Central Africa"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Belgrade",
+          "descr":"(GMT+02:00) Belgrade"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Bratislava",
+          "descr":"(GMT+02:00) Bratislava"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Budapest",
+          "descr":"(GMT+02:00) Budapest"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Ljubljana",
+          "descr":"(GMT+02:00) Ljubljana"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Prague",
+          "descr":"(GMT+02:00) Prague"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Sarajevo",
+          "descr":"(GMT+02:00) Sarajevo"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Skopje",
+          "descr":"(GMT+02:00) Skopje"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Warsaw",
+          "descr":"(GMT+02:00) Warsaw"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Zagreb",
+          "descr":"(GMT+02:00) Zagreb"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Brussels",
+          "descr":"(GMT+02:00) Brussels"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Copenhagen",
+          "descr":"(GMT+02:00) Copenhagen"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Madrid",
+          "descr":"(GMT+02:00) Madrid"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Paris",
+          "descr":"(GMT+02:00) Paris"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Amsterdam",
+          "descr":"(GMT+02:00) Amsterdam"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Berlin",
+          "descr":"(GMT+02:00) Berlin"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Bern",
+          "descr":"(GMT+02:00) Bern"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Rome",
+          "descr":"(GMT+02:00) Rome"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Stockholm",
+          "descr":"(GMT+02:00) Stockholm"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Vienna",
+          "descr":"(GMT+02:00) Vienna"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Cairo",
+          "descr":"(GMT+02:00) Cairo"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Harare",
+          "descr":"(GMT+02:00) Harare"
+       },
+       {
+          "dataOffset":"7200",
+          "value":"Pretoria",
+          "descr":"(GMT+02:00) Pretoria"
+       },
+       {
+          "dataOffset":"10800",
+          "value":"Bucharest",
+          "descr":"(GMT+03:00) Bucharest"
+       },
+       {
+          "dataOffset":"10800",
+          "value":"Helsinki",
+          "descr":"(GMT+03:00) Helsinki"
+       },
+       {
+          "dataOffset":"10800",
+          "value":"Kiev",
+          "descr":"(GMT+03:00) Kiev"
+       },
+       {
+          "dataOffset":"10800",
+          "value":"Kyiv",
+          "descr":"(GMT+03:00) Kyiv"
+       },
+       {
+          "dataOffset":"10800",
+          "value":"Riga",
+          "descr":"(GMT+03:00) Riga"
+       },
+       {
+          "dataOffset":"10800",
+          "value":"Sofia",
+          "descr":"(GMT+03:00) Sofia"
+       },
+       {
+          "dataOffset":"10800",
+          "value":"Tallinn",
+          "descr":"(GMT+03:00) Tallinn"
+       },
+       {
+          "dataOffset":"10800",
+          "value":"Vilnius",
+          "descr":"(GMT+03:00) Vilnius"
+       },
+       {
+          "dataOffset":"10800",
+          "value":"Athens",
+          "descr":"(GMT+03:00) Athens"
+       },
+       {
+          "dataOffset":"10800",
+          "value":"Istanbul",
+          "descr":"(GMT+03:00) Istanbul"
+       },
+       {
+          "dataOffset":"10800",
+          "value":"Minsk",
+          "descr":"(GMT+03:00) Minsk"
+       },
+       {
+          "dataOffset":"10800",
+          "value":"Jerusalem",
+          "descr":"(GMT+03:00) Jerusalem"
+       },
+       {
+          "dataOffset":"10800",
+          "value":"Moscow",
+          "descr":"(GMT+03:00) Moscow"
+       },
+       {
+          "dataOffset":"10800",
+          "value":"St. Petersburg",
+          "descr":"(GMT+03:00) St. Petersburg"
+       },
+       {
+          "dataOffset":"10800",
+          "value":"Volgograd",
+          "descr":"(GMT+03:00) Volgograd"
+       },
+       {
+          "dataOffset":"10800",
+          "value":"Kuwait",
+          "descr":"(GMT+03:00) Kuwait"
+       },
+       {
+          "dataOffset":"10800",
+          "value":"Riyadh",
+          "descr":"(GMT+03:00) Riyadh"
+       },
+       {
+          "dataOffset":"10800",
+          "value":"Nairobi",
+          "descr":"(GMT+03:00) Nairobi"
+       },
+       {
+          "dataOffset":"10800",
+          "value":"Baghdad",
+          "descr":"(GMT+03:00) Baghdad"
+       },
+       {
+          "dataOffset":"14400",
+          "value":"Abu Dhabi",
+          "descr":"(GMT+04:00) Abu Dhabi"
+       },
+       {
+          "dataOffset":"14400",
+          "value":"Muscat",
+          "descr":"(GMT+04:00) Muscat"
+       },
+       {
+          "dataOffset":"14400",
+          "value":"Baku",
+          "descr":"(GMT+04:00) Baku"
+       },
+       {
+          "dataOffset":"14400",
+          "value":"Tbilisi",
+          "descr":"(GMT+04:00) Tbilisi"
+       },
+       {
+          "dataOffset":"14400",
+          "value":"Yerevan",
+          "descr":"(GMT+04:00) Yerevan"
+       },
+       {
+          "dataOffset":"16200",
+          "value":"Tehran",
+          "descr":"(GMT+04:30) Tehran"
+       },
+       {
+          "dataOffset":"16200",
+          "value":"Kabul",
+          "descr":"(GMT+04:30) Kabul"
+       },
+       {
+          "dataOffset":"18000",
+          "value":"Ekaterinburg",
+          "descr":"(GMT+05:00) Ekaterinburg"
+       },
+       {
+          "dataOffset":"18000",
+          "value":"Islamabad",
+          "descr":"(GMT+05:00) Islamabad"
+       },
+       {
+          "dataOffset":"18000",
+          "value":"Karachi",
+          "descr":"(GMT+05:00) Karachi"
+       },
+       {
+          "dataOffset":"18000",
+          "value":"Tashkent",
+          "descr":"(GMT+05:00) Tashkent"
+       },
+       {
+          "dataOffset":"19800",
+          "value":"Chennai",
+          "descr":"(GMT+05:30) Chennai"
+       },
+       {
+          "dataOffset":"19800",
+          "value":"Kolkata",
+          "descr":"(GMT+05:30) Kolkata"
+       },
+       {
+          "dataOffset":"19800",
+          "value":"Mumbai",
+          "descr":"(GMT+05:30) Mumbai"
+       },
+       {
+          "dataOffset":"19800",
+          "value":"New Delhi",
+          "descr":"(GMT+05:30) New Delhi"
+       },
+       {
+          "dataOffset":"19800",
+          "value":"Sri Jayawardenepura",
+          "descr":"(GMT+05:30) Sri Jayawardenepura"
+       },
+       {
+          "dataOffset":"20700",
+          "value":"Kathmandu",
+          "descr":"(GMT+05:45) Kathmandu"
+       },
+       {
+          "dataOffset":"21600",
+          "value":"Astana",
+          "descr":"(GMT+06:00) Astana"
+       },
+       {
+          "dataOffset":"21600",
+          "value":"Dhaka",
+          "descr":"(GMT+06:00) Dhaka"
+       },
+       {
+          "dataOffset":"21600",
+          "value":"Almaty",
+          "descr":"(GMT+06:00) Almaty"
+       },
+       {
+          "dataOffset":"21600",
+          "value":"Urumqi",
+          "descr":"(GMT+06:00) Urumqi"
+       },
+       {
+          "dataOffset":"23400",
+          "value":"Rangoon",
+          "descr":"(GMT+06:30) Rangoon"
+       },
+       {
+          "dataOffset":"25200",
+          "value":"Novosibirsk",
+          "descr":"(GMT+07:00) Novosibirsk"
+       },
+       {
+          "dataOffset":"25200",
+          "value":"Bangkok",
+          "descr":"(GMT+07:00) Bangkok"
+       },
+       {
+          "dataOffset":"25200",
+          "value":"Hanoi",
+          "descr":"(GMT+07:00) Hanoi"
+       },
+       {
+          "dataOffset":"25200",
+          "value":"Jakarta",
+          "descr":"(GMT+07:00) Jakarta"
+       },
+       {
+          "dataOffset":"25200",
+          "value":"Krasnoyarsk",
+          "descr":"(GMT+07:00) Krasnoyarsk"
+       },
+       {
+          "dataOffset":"28800",
+          "value":"Beijing",
+          "descr":"(GMT+08:00) Beijing"
+       },
+       {
+          "dataOffset":"28800",
+          "value":"Chongqing",
+          "descr":"(GMT+08:00) Chongqing"
+       },
+       {
+          "dataOffset":"28800",
+          "value":"Hong Kong",
+          "descr":"(GMT+08:00) Hong Kong"
+       },
+       {
+          "dataOffset":"28800",
+          "value":"Kuala Lumpur",
+          "descr":"(GMT+08:00) Kuala Lumpur"
+       },
+       {
+          "dataOffset":"28800",
+          "value":"Singapore",
+          "descr":"(GMT+08:00) Singapore"
+       },
+       {
+          "dataOffset":"28800",
+          "value":"Taipei",
+          "descr":"(GMT+08:00) Taipei"
+       },
+       {
+          "dataOffset":"28800",
+          "value":"Perth",
+          "descr":"(GMT+08:00) Perth"
+       },
+       {
+          "dataOffset":"28800",
+          "value":"Irkutsk",
+          "descr":"(GMT+08:00) Irkutsk"
+       },
+       {
+          "dataOffset":"28800",
+          "value":"Ulaan Bataar",
+          "descr":"(GMT+08:00) Ulaan Bataar"
+       },
+       {
+          "dataOffset":"32400",
+          "value":"Seoul",
+          "descr":"(GMT+09:00) Seoul"
+       },
+       {
+          "dataOffset":"32400",
+          "value":"Osaka",
+          "descr":"(GMT+09:00) Osaka"
+       },
+       {
+          "dataOffset":"32400",
+          "value":"Sapporo",
+          "descr":"(GMT+09:00) Sapporo"
+       },
+       {
+          "dataOffset":"32400",
+          "value":"Tokyo",
+          "descr":"(GMT+09:00) Tokyo"
+       },
+       {
+          "dataOffset":"32400",
+          "value":"Yakutsk",
+          "descr":"(GMT+09:00) Yakutsk"
+       },
+       {
+          "dataOffset":"34200",
+          "value":"Darwin",
+          "descr":"(GMT+09:30) Darwin"
+       },
+       {
+          "dataOffset":"34200",
+          "value":"Adelaide",
+          "descr":"(GMT+09:30) Adelaide"
+       },
+       {
+          "dataOffset":"36000",
+          "value":"Canberra",
+          "descr":"(GMT+10:00) Canberra"
+       },
+       {
+          "dataOffset":"36000",
+          "value":"Melbourne",
+          "descr":"(GMT+10:00) Melbourne"
+       },
+       {
+          "dataOffset":"36000",
+          "value":"Sydney",
+          "descr":"(GMT+10:00) Sydney"
+       },
+       {
+          "dataOffset":"36000",
+          "value":"Brisbane",
+          "descr":"(GMT+10:00) Brisbane"
+       },
+       {
+          "dataOffset":"36000",
+          "value":"Hobart",
+          "descr":"(GMT+10:00) Hobart"
+       },
+       {
+          "dataOffset":"36000",
+          "value":"Vladivostok",
+          "descr":"(GMT+10:00) Vladivostok"
+       },
+       {
+          "dataOffset":"36000",
+          "value":"Guam",
+          "descr":"(GMT+10:00) Guam"
+       },
+       {
+          "dataOffset":"36000",
+          "value":"Port Moresby",
+          "descr":"(GMT+10:00) Port Moresby"
+       },
+       {
+          "dataOffset":"36000",
+          "value":"Solomon Is.",
+          "descr":"(GMT+10:00) Solomon Is."
+       },
+       {
+          "dataOffset":"39600",
+          "value":"Magadan",
+          "descr":"(GMT+11:00) Magadan"
+       },
+       {
+          "dataOffset":"39600",
+          "value":"New Caledonia",
+          "descr":"(GMT+11:00) New Caledonia"
+       },
+       {
+          "dataOffset":"43200",
+          "value":"Fiji",
+          "descr":"(GMT+12:00) Fiji"
+       },
+       {
+          "dataOffset":"43200",
+          "value":"Kamchatka",
+          "descr":"(GMT+12:00) Kamchatka"
+       },
+       {
+          "dataOffset":"43200",
+          "value":"Marshall Is.",
+          "descr":"(GMT+12:00) Marshall Is."
+       },
+       {
+          "dataOffset":"43200",
+          "value":"Auckland",
+          "descr":"(GMT+12:00) Auckland"
+       },
+       {
+          "dataOffset":"43200",
+          "value":"Wellington",
+          "descr":"(GMT+12:00) Wellington"
+       },
+       {
+          "dataOffset":"46800",
+          "value":"Nuku'alofa",
+          "descr":"(GMT+13:00) Nuku'alofa"
+       }
+    ]
+ }
