@@ -11,7 +11,13 @@ class Scope {
 
         elements.forEach(element => {            
             
-            let propToBind = element.getAttribute('data-bind');  
+            let propToBind = element.getAttribute('data-bind'); 
+            
+            if( element.type === "file" ){
+
+                let img = propToBind.replace('Upload', '');
+                document.querySelector(`#${img}Preview`).style.backgroundImage = `url(${data[img]})`; 
+            }
             
             if( element.type === "text" || 
                 element.type === "textearea" || 

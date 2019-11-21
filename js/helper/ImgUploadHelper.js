@@ -1,11 +1,9 @@
 class ImgUploadHelper {
 
-    constructor(renderPlace, imgInputId, uri, slot){
+    constructor(imgInputId, uri){
         
         this.uploads = [];
         this.imgInputId = imgInputId;
-        this.renderPlace = document.querySelector(`#${renderPlace}`);
-        this.slot = slot;
         this.uri = uri;
         this.init();
     }
@@ -15,7 +13,7 @@ class ImgUploadHelper {
         return `<div class="float-left ml-4 mr-4">
                     <div class="avatar-upload">
                         <div class="avatar-edit">
-                            <input type='file' name="file" id="${this.imgInputId}Upload" accept=".webp, .png, .jpg, .jpeg" />
+                            <input type='file' data-bind="${this.imgInputId}Upload" name="file" id="${this.imgInputId}Upload" accept=".webp, .png, .jpg, .jpeg" />
                             <label for="${this.imgInputId}Upload"></label>
                         </div>
                         <div class="avatar-set-upload">
@@ -30,15 +28,19 @@ class ImgUploadHelper {
     
     init(){
 
-        this.renderPlace.innerHTML += this._template();
+        document.querySelector(`#${this.imgInputId}`).innerHTML = this._template();
 
-        $(`#${this.imgInputId}Upload`).change((event) => {
+        document.querySelector(`#${this.imgInputId}Upload`).addEventListener('change', (event) => {
             this.readURL(event, `#${this.imgInputId}Preview`);
         }); 
     
-        $(`#${this.imgInputId}SetUpload`).click((event) => {
-            this.upload(event, `#${this.imgInputId}Upload`, `#${this.imgInputId}SetUpload`, this.slot);
+        document.querySelector(`#${this.imgInputId}SetUpload`).addEventListener('click', (event) => {
+            this.upload(event, `#${this.imgInputId}Upload`, `#${this.imgInputId}SetUpload`);
         });
+    }
+
+    LoadImg(img){
+        document.querySelector(`${this.imgInputId}Preview`).style.backgroundImage = `url('${img1}')`;
     }
     
     readURL = (event, imagePreview) => {
@@ -66,7 +68,7 @@ class ImgUploadHelper {
         document.querySelector(setUpload).classList.remove('fa-fw');
     };
 
-    upload = (event, inputFile, setUpload, slot) => {
+    upload = (event, inputFile, setUpload) => {
 
         event.preventDefault();
 
