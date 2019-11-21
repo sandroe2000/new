@@ -1,7 +1,7 @@
 class ProfileController {
 
     constructor(){
-
+        
         this.scope = {};
         this.profile = {};
         this.profileService = new ProfileService();

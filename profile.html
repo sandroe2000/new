@@ -111,21 +111,8 @@
                         <div class="col-md-3 col-label">
                             <label class="mb-0">Avatar</label>
                         </div>
-                        <div class="col-md-9 mt-2">
-                            <div class="float-left ml-4 mr-4">
-                                <div class="avatar-upload">
-                                    <div class="avatar-edit">
-                                        <input type='file' name="file" id="imageUpload1" accept=".webp .png, .jpg, .jpeg" />
-                                        <label for="imageUpload1"></label>
-                                    </div>
-                                    <div class="avatar-set-upload">
-                                        <label id="setUpload1"></label>
-                                    </div>
-                                    <div class="avatar-preview">
-                                        <div id="imagePreview1" style="background-image: url(img/avatar/1.webp);"></div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-md-9 mt-2" id="imgInputUpload_1">
+                            
                         </div>
                     </div>
                     <div class="row">
@@ -301,7 +288,7 @@
                             <label class="mb-0">New Password</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <input id="new-password" type="password" class="form-control" onKeyUp="checkPasswordStrength();" />
+                            <input id="new-password" type="password" class="form-control" />
                             <div id="password-strength-status"></div>
                         </div>
                     </div>
@@ -542,9 +529,10 @@
     <script src="assets/jquery/dist/jquery.min.js"></script>
     <script src="assets/popper.js/dist/umd/popper.min.js"></script>
     <script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/imgUpload/img-upload.js"></script>
-    <script src="assets/scrollTab.js/scroll-tab.js"></script>
-    <script src="assets/checkPassword/checkPassword.js"></script>
+    
+    <script src="js/helper/ImgUploadHelper.js"></script>
+    <script src="js/helper/ScrollTabsHelper.js"></script>
+    <script src="js/helper/CheckPasswordStrengthHelper.js"></script>
 
     <script src="js/model/Profile.js"></script>
     <script src="js/view/ProfileView.js"></script>
