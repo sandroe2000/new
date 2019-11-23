@@ -40,6 +40,7 @@ class ImgUploadHelper {
     }
 
     LoadImg(img){
+        
         document.querySelector(`${this.imgInputId}Preview`).style.backgroundImage = `url('${img1}')`;
     }
     
@@ -50,7 +51,7 @@ class ImgUploadHelper {
             let reader = new FileReader();
             reader.onload = (ev) => {
             let img = ev.target.result;
-                document.querySelector(imagePreview).style.backgroundImage = 'url(' + img + ')';
+                document.querySelector(imagePreview).style.backgroundImage = `url('${img1}')`;
             };
             reader.readAsDataURL(input.files[0]);
         }

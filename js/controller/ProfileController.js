@@ -6,6 +6,10 @@ class ProfileController {
         this.profile = {};
         this.imgUploadHelper1 = new ImgUploadHelper('imgProfile1', '/files?folder=none');
         this.imgUploadHelper2 = new ImgUploadHelper('imgProfile2', '/files?folder=none');
+        this.appView = new AppView( 
+            document.querySelector('#navHeader'),
+            document.querySelector('#navFooter')
+        );
         this.profileService = new ProfileService();
         this.profileService.findAll();        
         this.profileService.setGroups();

@@ -9,45 +9,18 @@
     <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="assets/open-iconic/font/css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="css/profile.css" />
+
+    <link rel="shortcut icon" href="img/favicon.ico" />
     
     <title>WoolaWeaver - SaaS</title>
   </head>
-  <body>
+  <body class="d-flex flex-column h-100">
 
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        
-        <a class="navbar-brand" href="#">WoolaWeaver</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHome" aria-controls="navbarHome" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarHome">
-            <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="home.html">Projects <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="profile.html">Profile</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="documentation.html">Documentation</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
-            </ul>
-            <form class="form-inline my-2 my-md-0">
-                <a class="nav-link" href="index.html">Sign out</a>
-            </form>
-        </div>
-
-    </nav>
+    <!--:: Header-->
+    <div id="navHeader"></div>
+    <!--:/ Header-->
 
     <!--:: Container-->
     <div class="container">
@@ -76,18 +49,18 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="password-tab" data-toggle="tab" href="#password" role="tab" aria-controls="password" aria-selected="false">
-                            <span class="oi oi-lock-unlocked mr-2"></span>Change Password
+                            <span class="oi oi-ellipses mr-2"></span>Change Password
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">
-                            <span class="oi oi-lock-unlocked mr-2"></span>Access Settings
+                            <span class="oi oi-key mr-2"></span>Access Settings
                         </a>
                     </li>
                 </ul>
             </div>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="tab-pane fade show active mb-3" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
                     <!--:: Profiles-->
                     <div class="row mt-3">
@@ -99,7 +72,7 @@
                         <div id="tableProfileView" class="col-md-12 mt-2"></div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="personal" role="tabpanel" aria-labelledby="personal-tab">
+                <div class="tab-pane fade mb-3" id="personal" role="tabpanel" aria-labelledby="personal-tab">
 
                     <!--:: Personal Information-->
                     <div class="row mt-3">
@@ -165,7 +138,7 @@
                     <!--/: Personal Information-->
 
                 </div>
-                <div class="tab-pane fade" id="account" role="tabpanel" aria-labelledby="account-tab">
+                <div class="tab-pane fade mb-3" id="account" role="tabpanel" aria-labelledby="account-tab">
                     
                     <!--:: Account Settings-->
                     <div class="row mt-3">
@@ -250,7 +223,7 @@
                     <!--/: Account Settings-->
 
                 </div>
-                <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+                <div class="tab-pane fade mb-3" id="password" role="tabpanel" aria-labelledby="password-tab">
 
                     <!--:: Change Password-->
                     <div class="alert alert-danger fade show mt-3 mb-3" role="alert">
@@ -303,7 +276,7 @@
                     </div>
 
                 </div>
-                <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                <div class="tab-pane fade mb-3" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                     
                     <!--:: Settings-->               
                     <div class="row mt-3">
@@ -502,6 +475,10 @@
     </div>
     <!--/: Container-->
 
+    <!--:: Footer-->
+    <footer id="navFooter" class="footer bg-dark mt-auto py-3"></footer>
+    <!--/: Footer-->
+
     <!--:: Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -536,6 +513,7 @@
     <script src="js/helper/CheckPasswordStrengthHelper.js"></script>
 
     <script src="js/model/Profile.js"></script>
+    <script src="js/view/AppView.js"></script>
     <script src="js/view/ProfileView.js"></script>
     <script src="js/service/ProfileService.js"></script>
     <script src="js/controller/Scope.js"></script>
