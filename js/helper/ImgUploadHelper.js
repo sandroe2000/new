@@ -41,7 +41,7 @@ class ImgUploadHelper {
 
     LoadImg(img){
         
-        document.querySelector(`${this.imgInputId}Preview`).style.backgroundImage = `url('${img1}')`;
+        document.querySelector(`${this.imgInputId}Preview`).style.backgroundImage = `url('${img}')`;
     }
     
     readURL = (event, imagePreview) => {
@@ -51,7 +51,7 @@ class ImgUploadHelper {
             let reader = new FileReader();
             reader.onload = (ev) => {
             let img = ev.target.result;
-                document.querySelector(imagePreview).style.backgroundImage = `url('${img1}')`;
+                document.querySelector(imagePreview).style.backgroundImage = `url('${img}')`;
             };
             reader.readAsDataURL(input.files[0]);
         }
@@ -85,7 +85,17 @@ class ImgUploadHelper {
         }).then(
             response => response.json()
         ).then(success => {
-                //uploads[slot] = success;
+                /*
+                    TODO -> Após upload recebe:
+                    {
+                        "id": 0,
+                        "name": "string",
+                        "path": "string",
+                        "length": 0,
+                        p"hash": "string",
+                    }
+                */
+
                 this.closeSpinner(setUpload);
         }).catch(error => {
             console.log(error);

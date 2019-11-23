@@ -9,6 +9,7 @@
   const files = [
     './*.html',
     './js/*.js',
+    './js/*/*.js',
     './css/*.css'
   ];
 
