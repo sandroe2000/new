@@ -6,10 +6,11 @@ class ProfileService {
         this.timeZone = [];
         this.language = [];
         this.profiles = [];
-        this.profileView = new ProfileView( document.querySelector('#tableProfileView'),
+        this.profileView = new ProfileView( document.querySelector('#tableProfile tbody'),
                                             document.querySelector('#groups'),
+                                            document.querySelector('#searchGroup'),
                                             document.querySelector('#timeZone'),
-                                            document.querySelector('#language') );
+                                            document.querySelector('#language'));
     }
 
     async setGroups(){
@@ -40,7 +41,11 @@ class ProfileService {
 
     async findAll(){
 
-        const response = await fetch('data/profiles.json', {
+        let name = document.querySelector('#searchName').value;
+        let group = document.querySelector('#searchGroup').value;        
+        let uri = `data/profiles.json?name=${name}&group=${group}`;
+   
+        const response = await fetch(encodeURI(uri), {
             method: 'GET'
         });
         this.profiles = await response.json();

@@ -33,7 +33,7 @@
             <div class="wrapper">
                 <ul class="nav nav-tabs list mt-2" id="profileTab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="personal-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">
+                        <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">
                             <span class="oi oi-list mr-2"></span>List of Profiles
                         </a>
                     </li>
@@ -64,12 +64,58 @@
 
                     <!--:: Profiles-->
                     <div class="row mt-3">
-                        <div class="col-md-12 mt-2">
-                            <h5>Profiles:</h5>
+                        <div id="tableProfileView" class="col-md-12 mt-2">
+                            <div class="row mb-3">
+                                <div class="col-md-5">
+                                    <label class="mb-0">Search</label>
+                                    <input id="searchName" type="text" class="form-control" />
+                                </div>
+                                <div class="col-md-5">
+                                    <label class="mb-0">Groups</label>
+                                    <select id="searchGroup" class="form-control"></select>
+                                </div>
+                                <div class="col-md-2">
+                                    <button id="btnSearchProfiles" class="btn btn-success btn-block mt-4">Search</button>
+                                </div>
+                            </div>
+                            <table id="tableProfile" class="table table-sm table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="w-10">#<span class="oi oi-elevator ml-2"></span></th>
+                                        <th class="w-40">Name<span class="oi oi-caret-bottom ml-2"></span></th>
+                                        <th class="w-20">Groups<span class="oi oi-elevator ml-2"></span></th>
+                                        <th class="w-10">Disabled</th>
+                                        <th class="w-10"></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <select class="form-control w-10" style="float:left; min-width: 75px;">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination justify-content-end" style="border-radius: 0">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                    </li>
+                                    <li class="page-item active" aria-current="page">
+                                        <span class="page-link">
+                                            1
+                                            <span class="sr-only">(current)</span>
+                                        </span>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div id="tableProfileView" class="col-md-12 mt-2"></div>
                     </div>
                 </div>
                 <div class="tab-pane fade mb-3" id="personal" role="tabpanel" aria-labelledby="personal-tab">
@@ -329,8 +375,8 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4">
-                            <label class="col-label">Access Group:</label>
+                        <div class="col-md-4 col-label">
+                            <label>Access Group:</label>
                         </div>                
                         <div class="col-md-8">
                             <select id="groups" class="form-control"></select>                            
@@ -339,8 +385,8 @@
 
                     <!--:: Access Settings-->
                     <div class="row mt-3">
-                        <div class="col-md-4">
-                            <label class="col-label">Access Settings:</label>
+                        <div class="col-md-4 col-label">
+                            <label>Access Settings:</label>
                         </div>                
                         <div class="col-md-8">
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
@@ -365,8 +411,8 @@
 
                     <!--:: Account Settings-->
                     <div class="row">
-                        <div class="col-md-4">
-                            <label class="col-label">Account Settings:</label>
+                        <div class="col-md-4 col-label">
+                            <label>Account Settings:</label>
                         </div>                
                         <div class="col-md-8">
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
@@ -391,8 +437,8 @@
 
                     <!--:: Change Password-->
                     <div class="row">
-                        <div class="col-md-4">
-                            <label class="col-label">Change Password:</label>
+                        <div class="col-md-4 col-label">
+                            <label>Change Password:</label>
                         </div>                
                         <div class="col-md-8">
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
@@ -417,8 +463,8 @@
 
                     <!--:: List of Profiles-->
                     <div class="row">
-                        <div class="col-md-4">
-                            <label class="col-label">List of Profiles:</label>
+                        <div class="col-md-4 col-label">
+                            <label>List of Profiles:</label>
                         </div>                
                         <div class="col-md-8">
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
@@ -443,8 +489,8 @@
 
                     <!--:: Personal Information-->
                     <div class="row">
-                        <div class="col-md-4">
-                            <label class="col-label">Personal Information:</label>
+                        <div class="col-md-4 col-label">
+                            <label>Personal Information:</label>
                         </div>                
                         <div class="col-md-8">
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
@@ -469,7 +515,8 @@
 
                 </div>
                 <!--/: User Settings-->
-            </div>    
+            </div>
+            
             <!--/: Content-->
         </form>
     </div>
