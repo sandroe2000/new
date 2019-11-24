@@ -188,10 +188,17 @@ label{
     float:left;
 }
 /* table */
-table th,
-table td {
+.table th,
+.table td {
     color: #FFF;
     border-top: 1px solid #FFF;
+}
+.table th{
+    border-top: 1px solid transparent !important;
+}
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #FFF;
 }
 table tbody tr td i {
     font-size: 30px;
