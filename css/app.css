@@ -15,6 +15,7 @@ body {
 }
 .dropdown-menu {
     border-radius: 0;
+    margin: 0;
 }
 
 /* nav-tabs */
@@ -192,6 +193,7 @@ label{
 .table td {
     color: #FFF;
     border-top: 1px solid #FFF;
+    white-space: nowrap;
 }
 .table th{
     border-top: 1px solid transparent !important;
