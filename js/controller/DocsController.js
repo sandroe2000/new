@@ -1,4 +1,6 @@
-class DocsController {
+import { AppView } from '../view/AppView.js';
+
+export class DocsController {
 
     constructor(){
 

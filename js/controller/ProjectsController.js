@@ -1,4 +1,6 @@
-class ProjectsController {
+import { AppView } from '../view/AppView.js';
+
+export class ProjectsController {
 
     constructor(){
 

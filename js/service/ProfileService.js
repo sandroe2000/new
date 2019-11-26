@@ -1,12 +1,16 @@
-class ProfileService {
+import { ProfileView } from '../view/ProfileView.js';
 
-    constructor(){
+export class ProfileService {
+
+    constructor(controller){
 
         this.groups = [];
         this.timeZone = [];
         this.language = [];
         this.profiles = [];
-        this.profileView = new ProfileView( document.querySelector('#tableProfile tbody'),
+        this.profileController = controller;
+        this.profileView = new ProfileView( this.profileController, 
+                                            document.querySelector('#tableProfile tbody'),
                                             document.querySelector('#groups'),
                                             document.querySelector('#searchGroup'),
                                             document.querySelector('#timeZone'),
@@ -45,13 +49,14 @@ class ProfileService {
         let group = document.querySelector('#searchGroup').value;        
         let size = document.querySelector('#tableProfileSize').value; 
         let page = 0;
-        if(profileController && profileController.tableProfilePage){
-            page = profileController.tableProfilePage;
+
+        if(this.profileController && this.profileController.tableProfilePage){
+            page = this.profileController.tableProfilePage;
         }
         let uri = `data/profiles.json?name=${name}&group=${group}&size=${size}&page=${page}`;
         
         console.log( uri );
-        
+
         const response = await fetch(encodeURI(uri), {
             method: 'GET'
         });
@@ -61,7 +66,7 @@ class ProfileService {
 
     findById(id){
 
-        let profiles = profileController.profileService.profiles.list;
+        let profiles = this.profileController.profileService.profiles.list;
         let result = {};
 
         profiles.forEach(profile => {

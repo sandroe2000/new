@@ -1,7 +1,8 @@
-class ProfileView {
+export class ProfileView {
 
-    constructor(tableProfiles, selectGroups, selectSearchGroup, selectTimeZone, selectLanguage){
+    constructor(controller, tableProfiles, selectGroups, selectSearchGroup, selectTimeZone, selectLanguage){
         
+        this.profileController = controller;
         this.tableProfiles = tableProfiles;
         this.selectGroups = selectGroups;
         this.selectSearchGroup = selectSearchGroup;
@@ -55,7 +56,7 @@ class ProfileView {
         document.querySelectorAll('.ico-mouse-hand').forEach(item => {
             item.addEventListener('click', event => {                
                 let tr = event.target.closest('tr');
-                profileController.loadProfileById(tr.getAttribute('data-id'));
+                this.profileController.loadProfileById(tr.getAttribute('data-id'));
             });
         });
     }

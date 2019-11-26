@@ -1,4 +1,4 @@
-class ImgUploadHelper {
+export class ImgUploadHelper {
 
     constructor(imgInputId, uri){
         
@@ -6,6 +6,20 @@ class ImgUploadHelper {
         this.imgInputId = imgInputId;
         this.uri = uri;
         this.init();
+    }
+
+    
+    init(){
+
+        document.querySelector(`#${this.imgInputId}`).innerHTML = this._template();
+
+        document.querySelector(`#${this.imgInputId}Upload`).addEventListener('change', (event) => {
+            this.readURL(event, `#${this.imgInputId}Preview`);
+        }); 
+    
+        document.querySelector(`#${this.imgInputId}SetUpload`).addEventListener('click', (event) => {
+            this.upload(event, `#${this.imgInputId}Upload`, `#${this.imgInputId}SetUpload`);
+        });
     }
 
     _template(){
@@ -26,19 +40,6 @@ class ImgUploadHelper {
                 </div>`;
     }
     
-    init(){
-
-        document.querySelector(`#${this.imgInputId}`).innerHTML = this._template();
-
-        document.querySelector(`#${this.imgInputId}Upload`).addEventListener('change', (event) => {
-            this.readURL(event, `#${this.imgInputId}Preview`);
-        }); 
-    
-        document.querySelector(`#${this.imgInputId}SetUpload`).addEventListener('click', (event) => {
-            this.upload(event, `#${this.imgInputId}Upload`, `#${this.imgInputId}SetUpload`);
-        });
-    }
-
     LoadImg(img){
         
         document.querySelector(`${this.imgInputId}Preview`).style.backgroundImage = `url('${img}')`;

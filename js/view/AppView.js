@@ -1,4 +1,4 @@
-class AppView {
+export class AppView {
 
     constructor(navHeader, navFooter){
 

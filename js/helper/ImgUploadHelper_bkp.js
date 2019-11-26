@@ -1,4 +1,4 @@
-class ImgUploadHelper {
+export class ImgUploadHelper {
 
     constructor(){
         

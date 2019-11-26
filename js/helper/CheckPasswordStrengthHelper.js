@@ -1,4 +1,4 @@
-class CheckPasswordStrengthHelper {
+export class CheckPasswordStrengthHelper {
 
     constructor(inputPass){
 

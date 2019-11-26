@@ -1,4 +1,4 @@
-class ScrollTabsHelper {
+export class ScrollTabsHelper {
 
     constructor(){
 

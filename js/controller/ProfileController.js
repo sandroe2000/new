@@ -1,17 +1,23 @@
-class ProfileController {
+import { Scope } from './Scope.js';
+import { ImgUploadHelper } from '../helper/ImgUploadHelper.js';
+import { AppView } from '../view/AppView.js';
+import { Profile } from '../model/Profile.js';
+import { ProfileService } from '../service/ProfileService.js';
+
+export class ProfileController {
 
     constructor(){
         
         this.scope = {};
         this.profile = {};
         this.imgUploadHelper1 = new ImgUploadHelper('imgProfile1', '/files?folder=none');
-        this.imgUploadHelper2 = new ImgUploadHelper('imgProfile2', '/files?folder=none');
+        //this.imgUploadHelper2 = new ImgUploadHelper('imgProfile2', '/files?folder=none');
         this.appView = new AppView( 
             document.querySelector('#navHeader'),
             document.querySelector('#navFooter')
         );
         this.tableProfilePage = 0;
-        this.profileService = new ProfileService();
+        this.profileService = new ProfileService(this);
         this.init();
     }
 
