@@ -43,8 +43,15 @@ class ProfileService {
 
         let name = document.querySelector('#searchName').value;
         let group = document.querySelector('#searchGroup').value;        
-        let uri = `data/profiles.json?name=${name}&group=${group}`;
-   
+        let size = document.querySelector('#tableProfileSize').value; 
+        let page = 0;
+        if(profileController && profileController.tableProfilePage){
+            page = profileController.tableProfilePage;
+        }
+        let uri = `data/profiles.json?name=${name}&group=${group}&size=${size}&page=${page}`;
+        
+        console.log( uri );
+        
         const response = await fetch(encodeURI(uri), {
             method: 'GET'
         });
