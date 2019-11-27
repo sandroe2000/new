@@ -1,3 +1,22 @@
+/*
+# Uninstall previous Gulp installation and related packages, if any
+$ npm rm gulp -g
+$ npm rm gulp-cli -g
+$ cd [your-project-dir/]
+$ npm rm gulp --save-dev
+$ npm rm gulp --save
+$ npm rm gulp --save-optional
+$ npm cache clean # for npm < v5
+
+# Install the latest Gulp CLI tools globally
+$ npm install gulpjs/gulp-cli -g
+
+# Install Gulp 4 into your project as dev dependency
+$ npm install gulp --save-dev
+
+# Check the versions installed. Make sure your versions are not lower than shown.
+$ gulp -v
+*/
 (() => {
 
   'use strict';

@@ -5,10 +5,10 @@ export class ScrollTabsHelper {
         this.hidWidth = 0;
         this.scrollBarWidths = 40;
         this.reAdjust();
-        this.init();
+        this.init(this);
     }
 
-    init(){
+    init(scrollTabsHelper){
 
         $(window).on('resize',function(event){  
             scrollTabsHelper.reAdjust();
