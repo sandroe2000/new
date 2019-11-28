@@ -8,6 +8,8 @@ export class ProfileController {
 
     constructor(){
         
+        this.startWait();
+
         this.scope = {};
         this.profile = {};
         this.imgUploadHelper1 = new ImgUploadHelper('imgProfile1', '/files?folder=none');
@@ -70,5 +72,15 @@ export class ProfileController {
         this.scope.init( this.profile.profile );
         
         $('#profileTab li:eq(1) a').tab('show');
+    }
+
+    startWait(){
+        $('#modalWait').modal({backdrop: 'static'},'show');
+    }
+
+    stopWait(){
+        setTimeout(() => {
+            $('#modalWait').modal('hide');
+        }, 500);
     }
 }

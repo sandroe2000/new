@@ -278,7 +278,7 @@
                                 <i class="fa fa-2x fa-exclamation-triangle mt-2" aria-hidden="true"></i>
                             </div>
                             <div class="col">
-                                Configure user passwords to expire periodically.<br> 
+                                <strong>Configure user passwords to expire periodically.</strong><br> 
                                 Users will need warning that their passwords are going to expire, or they might inadvertently get locked out of the system!
                             </div>
                             <div class="col-auto align-self-start">
@@ -324,6 +324,22 @@
                 </div>
                 <div class="tab-pane fade mb-3" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                     
+                    <div class="alert alert-success fade show mt-3 mb-3" role="alert">
+                        <div class="row">
+                            <div class="col-auto align-self-start">
+                                <i class="fa fa-2x fa-check-circle mt-2" aria-hidden="true"></i>
+                            </div>
+                            <div class="col mt-2">
+                                Data has been saved successfully!
+                            </div>
+                            <div class="col-auto align-self-start">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
                     <!--:: Settings-->               
                     <div class="row mt-3">
                         <div class="col-md-12 mt-2">
@@ -545,6 +561,12 @@
             </div>
             </div>
 
+        </div>
+    </div>
+
+    <div id="modalWait" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered justify-content-center" role="document">
+            <span class="fa fa-spinner fa-spin fa-3x"></span>
         </div>
     </div>
     <!--/: Modal -->

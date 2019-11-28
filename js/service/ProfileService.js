@@ -45,6 +45,8 @@ export class ProfileService {
 
     async findAll(){
 
+        this.profileController.startWait();
+
         let name = document.querySelector('#searchName').value;
         let group = document.querySelector('#searchGroup').value;        
         let size = document.querySelector('#tableProfileSize').value; 
@@ -55,13 +57,14 @@ export class ProfileService {
         }
         let uri = `data/profiles.json?name=${name}&group=${group}&size=${size}&page=${page}`;
         
-        console.log( uri );
-
         const response = await fetch(encodeURI(uri), {
             method: 'GET'
         });
+
         this.profiles = await response.json();
         this.profileView.setTableProfiles(this.profiles);
+
+        this.profileController.stopWait();
     }
 
     findById(id){
