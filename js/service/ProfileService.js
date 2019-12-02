@@ -18,7 +18,6 @@ export class ProfileService {
     }
 
     async setGroups(){
-
         const response = await fetch('data/groups.json', {
             method: 'GET'
         });

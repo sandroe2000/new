@@ -1,4 +1,4 @@
-import { Scope } from './Scope.js';
+import { ScopeHelper } from '../helper/ScopeHelper.js';
 import { ImgUploadHelper } from '../helper/ImgUploadHelper.js';
 import { AppView } from '../view/AppView.js';
 import { Profile } from '../model/Profile.js';
@@ -10,7 +10,7 @@ export class ProfileController {
         
         this.startWait();
 
-        this.scope = {};
+        this.scopeHelper = {};
         this.profile = {};
         this.imgUploadHelper1 = new ImgUploadHelper('imgProfile1', '/files?folder=none');
         //this.imgUploadHelper2 = new ImgUploadHelper('imgProfile2', '/files?folder=none');
@@ -68,8 +68,8 @@ export class ProfileController {
     loadProfileById(id){
 
         this.profile = new Profile( this.profileService.findById(id) );
-        this.scope = new Scope();
-        this.scope.init( this.profile.profile );
+        this.scopeHelper = new ScopeHelper();
+        this.scopeHelper.init( this.profile.profile );
         
         $('#profileTab li:eq(1) a').tab('show');
     }

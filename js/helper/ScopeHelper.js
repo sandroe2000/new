@@ -1,4 +1,4 @@
-export class Scope {
+export class ScopeHelper {
 
     constructor(newScope){
         this.scope = newScope;
