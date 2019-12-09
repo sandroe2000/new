@@ -54,21 +54,21 @@ export class ProfileService {
         if(this.profileController && this.profileController.tableProfilePage){
             page = this.profileController.tableProfilePage;
         }
-        let uri = `data/profiles.json?name=${name}&group=${group}&size=${size}&page=${page}`;
+        let uri = `/profiles/search?name=${name}&groupParticipant=${group}&size=${size}&page=${page}`;
         
         const response = await fetch(encodeURI(uri), {
             method: 'GET'
         });
 
         this.profiles = await response.json();
-        this.profileView.setTableProfiles(this.profiles);
+        this.profileView.setTableProfiles(this.profiles.content);
 
         this.profileController.stopWait();
     }
 
     findById(id){
 
-        let profiles = this.profileController.profileService.profiles.list;
+        let profiles = this.profileController.profileService.profiles.content;
         let result = {};
 
         profiles.forEach(profile => {

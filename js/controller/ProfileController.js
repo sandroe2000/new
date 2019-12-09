@@ -25,6 +25,11 @@ export class ProfileController {
 
     init(){
 
+        document.querySelector('#btnNewProfile').addEventListener('click', (event) =>{
+
+            console.log( this.profileService.profiles );
+        });
+
         document.querySelector('#btnSearchProfiles').addEventListener('click', (event) =>{
 
             this.tableProfilePage = 0;

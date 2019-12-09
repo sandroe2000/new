@@ -1,9 +1,9 @@
 {
-    "list": [
+    "content": [
         {
             "id": 1, 
-            "firstName": "Keanu", 
-            "lastName": "Reeves",
+            "cpf": "888888888-88",
+            "name": "Keanu Reeves",
             "imgProfile1": "/img/avatar/neo.webp",
             "imgProfile2": "/img/avatar/julie.jpeg",
             "birthDate": "1981-01-29",
@@ -25,8 +25,8 @@
         },
         {
             "id": 2, 
-            "firstName": "Mariane", 
-            "lastName": "Espindula",
+            "cpf": "888888888-88",
+            "name": "Mariane C. Espindula",
             "imgProfile1": "/img/avatar/mariane.jpg",
             "imgProfile2": "/img/avatar/michael.jpg",
             "birthDate": "1980-01-28", 
@@ -44,8 +44,8 @@
         },
         {
             "id": 3, 
-            "firstName": "Carlos", 
-            "lastName": "Alberto Jr.",
+            "cpf": "888888888-88",
+            "name": "Carlos Alberto Jr.",
             "imgProfile1": "/img/avatar/mike.jpg",
             "imgProfile2": "/img/avatar/olivia.jpg",
             "birthDate": "1990-01-30",
@@ -63,8 +63,8 @@
         },
         {
             "id": 4, 
-            "firstName": "Maria C.", 
-            "lastName": "Cavalcanti Di Espindula",
+            "cpf": "888888888-88",
+            "name": "Maria C. Cavalcanti Di Espindula",
             "imgProfile1": "/img/avatar/ceica.jpg",
             "imgProfile2": "/img/avatar/olivia.jpg",
             "birthDate": "1990-01-30",
@@ -82,8 +82,8 @@
         },
         {
             "id": 5, 
-            "firstName": "Sandro", 
-            "lastName": "C. Di Espindula",
+            "cpf": "888888888-88",
+            "name": "Sandro C. Di Espindula",
             "imgProfile1": "/img/avatar/mike.jpg",
             "imgProfile2": "/img/avatar/olivia.jpg",
             "birthDate": "1973-05-9",
@@ -103,5 +103,13 @@
             "listOfProfiles": ["DELETE", "EDIT", "EXECUTE"],
             "personalInformation": ["DELETE", "EDIT", "EXECUTE"]
         }
-    ]
-}
+    ],
+    "last": false,
+    "totalElements": 5,
+    "totalPages": 1,
+    "size": 5,
+    "number": 0,
+    "sort": null,
+    "first": true,
+    "numberOfElements": 5
+  }

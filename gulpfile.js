@@ -32,7 +32,7 @@ $ gulp -v
     './css/*.css'
   ];
 
-  const jsonPlaceholderProxy = proxy(['/users', '/access'], {
+  const jsonPlaceholderProxy = proxy(['/profiles', '/access'], {
     target: 'http://localhost:8080',
     changeOrigin: true,
     logLevel: 'debug'

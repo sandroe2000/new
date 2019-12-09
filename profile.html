@@ -23,7 +23,7 @@
     <!--:/ Header-->
 
     <!--:: Container-->
-    <div class="container-fluid">
+    <div class="container">
 
         <form id="frmProfile" data-frm-bind="frmProfile">
 
@@ -66,16 +66,19 @@
                     <div class="row mt-3">
                         <div id="tableProfileView" class="col-md-12 mt-2">
                             <div class="row mb-3">
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <label class="mb-0">Search</label>
                                     <input id="searchName" type="text" class="form-control" />
                                 </div>
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <label class="mb-0">Groups</label>
                                     <select id="searchGroup" class="form-control"></select>
                                 </div>
                                 <div class="col-md-2">
-                                    <button id="btnSearchProfiles" class="btn btn-success btn-block mt-4">Search</button>
+                                    <button type="button" id="btnSearchProfiles" class="btn btn-success btn-block mt-4">Search</button>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="button" id="btnNewProfile" class="btn btn-light btn-block mt-4">New</button>
                                 </div>
                             </div>
                             <table id="tableProfile" class="table table-striped">
@@ -137,18 +140,18 @@
                     </div>
                     <div class="row">
                         <div class="col-md-3 col-label">
-                            <label class="mb-0">Fisrt Name</label>
+                            <label class="mb-0">CPF</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <input id="firstName" data-bind="firstName" type="text" class="form-control" />
+                            <input id="cpf" data-bind="cpf" type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3 col-label">
-                            <label class="mb-0">Last Name</label>
+                            <label class="mb-0">Name</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <input id="lastName" data-bind="lastName" type="text" class="form-control" />
+                            <input id="name" data-bind="name" type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="row">

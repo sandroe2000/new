@@ -12,12 +12,12 @@ export class ProfileView {
 
     _tableProfiles(model){ 
         
-        return `${model.list.map(profile => `<tr data-id="${profile.id}">
+        return `${model.map(profile => `<tr data-id="${profile.id}">
                     <td class="w-10">
                         ${profile.id}
                     </td>
-                    <td class="w-40" title="${profile.firstName} ${profile.lastName}">
-                        ${profile.firstName} ${profile.lastName}
+                    <td class="w-40" title="${profile.name}">
+                        ${profile.name}
                     </td>
                     <td class="w-20" title="${profile.groupParticipant}">
                         ${profile.groupParticipant}
@@ -59,6 +59,33 @@ export class ProfileView {
                 this.profileController.loadProfileById(tr.getAttribute('data-id'));
             });
         });
+    }
+
+    setPaginationProfiles(objPagination, options, i){
+        let more = false;
+        let label = i+1;
+        if(i>=20){
+            more = true;
+            label = '...';
+        }
+        let li = document.createElement('li');
+        if(i==new Number(options.page)){
+            li.setAttribute('class', 'page-item active');
+        }else{
+            if(more){
+                li.setAttribute('class', 'page-item disabled');
+            }else{
+                li.setAttribute('class', 'page-item')
+            }
+        }
+        let a = document.createElement('a');
+            a.setAttribute('class', 'page-link');
+            a.setAttribute('href', '#');
+        let aNumber = document.createTextNode(label);
+
+        a.appendChild(aNumber);
+        li.appendChild(a);
+        objPagination.appendChild(li);
     }
 
     setGroups(data){
