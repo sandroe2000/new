@@ -25,9 +25,17 @@ export class ProfileController {
 
     init(){
 
+        document.querySelector('#btnSaveProfile').addEventListener('click', (event) =>{
+
+            console.log( this.profile.profile );
+        });
+
         document.querySelector('#btnNewProfile').addEventListener('click', (event) =>{
 
-            console.log( this.profileService.profiles );
+            this.profile = new Profile();
+            this.scopeHelper = new ScopeHelper();
+            this.scopeHelper.init( this.profile.profile );
+            $('#profileTab li:eq(1) a').tab('show');
         });
 
         document.querySelector('#btnSearchProfiles').addEventListener('click', (event) =>{

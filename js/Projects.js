@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     projects = new Projects();
 
     let url = window.location.href;
-    url = url.replace('http://localhost:3000/', '');
+    url = url.replace('http://localhost:3000/', '').replace('.html', '');
 
     document.querySelectorAll('ul.navbar-nav.mr-auto li').forEach((li) => {
 

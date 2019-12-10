@@ -23,7 +23,7 @@ export class ProfileView {
                         ${profile.groupParticipant}
                     </td>
                     <td class="w-10">
-                        ${profile.disabled}
+                        ${profile.disabled == null ? '' : profile.disabled}
                     </td>
                     <td class="w-10 text-right">
                         <span class="oi oi-pencil mr-2 ico-mouse-hand"></span>
