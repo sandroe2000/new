@@ -42,21 +42,6 @@
                             <span class="oi oi-person mr-2"></span>Personal Information
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="account-tab" data-toggle="tab" href="#account" role="tab" aria-controls="account" aria-selected="false">
-                            <span class="oi oi-globe mr-2"></span>Account Settings
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="password-tab" data-toggle="tab" href="#password" role="tab" aria-controls="password" aria-selected="false">
-                            <span class="oi oi-ellipses mr-2"></span>Change Password
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">
-                            <span class="oi oi-key mr-2"></span>Access Settings
-                        </a>
-                    </li>
                 </ul>
             </div>
             <div class="tab-content" id="myTabContent">
@@ -185,9 +170,6 @@
                     </div>
                     <!--/: Personal Information-->
 
-                </div>
-                <div class="tab-pane fade mb-3" id="account" role="tabpanel" aria-labelledby="account-tab">
-                    
                     <!--:: Account Settings-->
                     <div class="row mt-3">
                         <div class="col-md-12 mt-2">
@@ -270,9 +252,6 @@
                     </div>
                     <!--/: Account Settings-->
 
-                </div>
-                <div class="tab-pane fade mb-3" id="password" role="tabpanel" aria-labelledby="password-tab">
-
                     <!--:: Change Password-->
                     <div class="alert alert-danger fade show mt-3 mb-3" role="alert">
                         <div class="row">
@@ -301,7 +280,9 @@
                             <label class="mb-0">Current Password</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <input id="old-password" type="password" class="form-control" />
+                            <div class="form-group pass_show"> 
+                                <input id="old-password" type="password" class="form-control" />
+                            </div>
                             <small id="passwordlHelp" class="form-text text-muted"><a href="#">Forgot password ?</a></small>
                         </div>
                     </div>
@@ -310,8 +291,10 @@
                             <label class="mb-0">New Password</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <input id="new-password" type="password" class="form-control" />
-                            <div id="password-strength-status"></div>
+                            <div class="form-group pass_show mb-0">
+                                <input id="new-password" type="password" class="form-control" />
+                            </div>
+                            <div id="password-strength-status" class="mt-0"></div>
                         </div>
                     </div>
                     <div class="row">
@@ -319,13 +302,12 @@
                             <label class="mb-0">Verify Password</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <input type="confirm-Password" class="form-control" />
+                            <div class="form-group pass_show">
+                                <input type="password" class="form-control" />
+                            </div>
                         </div>
                     </div>
 
-                </div>
-                <div class="tab-pane fade mb-3" id="settings" role="tabpanel" aria-labelledby="settings-tab">
-                    
                     <div class="alert alert-success fade show mt-3 mb-3" role="alert">
                         <div class="row">
                             <div class="col-auto align-self-start">
@@ -342,10 +324,10 @@
                         </div>
                     </div>
 
-                    <!--:: Settings-->               
+                    <!--:: Groups-->               
                     <div class="row mt-3">
                         <div class="col-md-12 mt-2">
-                            <h5>Settings</h5>
+                            <h5>Groups:</h5>
                         </div>
                     </div>
                     <div class="row">
@@ -384,12 +366,10 @@
                         </div>
                     </div>
 
-                    <hr class="mt-4" />
-
                     <!--:: Settings-->               
                     <div class="row">
                         <div class="col-md-12">
-                            <h5>Access</h5>
+                            <h5>Access:</h5>
                         </div>
                     </div>
                     <div class="row">
@@ -581,6 +561,21 @@
 
     <!-- Apps Modules -->
     <script type="module" src="js/Profiles.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.pass_show').append('<i class="fa fa-eye ptxt"></i>');  
+        });
+            
+        $(document).on('click','.pass_show .ptxt', function(){ 
+
+            $(this).toggleClass('fa-eye fa-eye-slash');
+
+            $(this).prev().attr('type', function(index, attr){
+            return attr == 'password' ? 'text' : 'password'; 
+            }); 
+
+        });
+    </script>
 
 </body>
 </html>

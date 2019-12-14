@@ -19,12 +19,13 @@ export class CheckPasswordStrengthHelper {
         let lowcase = /([a-z])/;
         let uppercase = /([A-Z])/;
         let special_characters = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
+        let min = 8;
 
-        if($(this.inputPass).val().length < 6) {
+        if($(this.inputPass).val().length < min) {
 
             $('#password-strength-status').removeClass();
             $('#password-strength-status').addClass('weak-password');
-            $('#password-strength-status').html("Fraca (deve ter pelo menos 6 caracteres.)");
+            $('#password-strength-status').html(`Fraca (deve ter pelo menos ${min} caracteres.)`);
         } else {  
 
             if( $(this.inputPass).val().match(number) && 

@@ -27,7 +27,7 @@ export class ProfileController {
 
         document.querySelector('#btnSaveProfile').addEventListener('click', (event) =>{
 
-            console.log( this.profile.profile );
+            this.profileService.saveOrUpdate(this.profile.profile);
         });
 
         document.querySelector('#btnNewProfile').addEventListener('click', (event) =>{
@@ -95,5 +95,10 @@ export class ProfileController {
         setTimeout(() => {
             $('#modalWait').modal('hide');
         }, 500);
+    }
+
+    delete(id){
+
+        this.profileService.delete(id);
     }
 }

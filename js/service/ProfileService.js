@@ -80,15 +80,33 @@ export class ProfileService {
         return result;
     }
 
-    add(profile){
+    async saveOrUpdate(profile){
 
+        let method = 'POST';
+        let uri = '/profiles';
+
+        if(profile.id){
+            method = 'PUT';
+            uri = `/profiles/${profile.id}`;
+        }
+
+        const response = await fetch(uri, {
+            method: method,
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(profile)
+        });
+        document.querySelector('#searchName').value = profile.name;
+        await this.findAll();
     }
 
-    update(profile){
+    async delete(id){
 
-    }
-
-    delete(id){
-
+        const response = await fetch(`/profiles/${id}`, {
+            method: 'DELETE'
+        });
+        await this.findAll();
     }
 }

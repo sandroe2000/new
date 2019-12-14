@@ -26,7 +26,8 @@ export class ProfileView {
                         ${profile.disabled == null ? '' : profile.disabled}
                     </td>
                     <td class="w-10 text-right">
-                        <span class="oi oi-pencil mr-2 ico-mouse-hand"></span>
+                        <span class="oi oi-pencil mr-4 ico-mouse-hand"></span>
+                        <span class="oi oi-trash mr-2 ico-mouse-hand"></span>
                     </td>
                 </tr>`).join('')}`;
     } 
@@ -53,10 +54,17 @@ export class ProfileView {
         
         this.tableProfiles.innerHTML = this._tableProfiles(model);
 
-        document.querySelectorAll('.ico-mouse-hand').forEach(item => {
+        document.querySelectorAll('.oi.oi-pencil').forEach(item => {
             item.addEventListener('click', event => {                
                 let tr = event.target.closest('tr');
                 this.profileController.loadProfileById(tr.getAttribute('data-id'));
+            });
+        });
+
+        document.querySelectorAll('.oi.oi-trash').forEach(item => {
+            item.addEventListener('click', event => {                
+                let tr = event.target.closest('tr');
+                this.profileController.delete(tr.getAttribute('data-id'));
             });
         });
     }
