@@ -16,10 +16,10 @@ export class ProfileView {
                     <td class="w-10">
                         ${profile.id}
                     </td>
-                    <td class="w-40" title="${profile.name}">
+                    <td class="w-40 ellipsis" title="${profile.name}">
                         ${profile.name}
                     </td>
-                    <td class="w-20" title="${profile.groupParticipant}">
+                    <td class="w-20 ellipsis" title="${profile.groupParticipant}">
                         ${profile.groupParticipant}
                     </td>
                     <td class="w-10">

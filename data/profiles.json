@@ -96,7 +96,7 @@
             "communication": ["EMAIL", "SMS", "WHATSAPP"],
             "passwordResetVerif": [],
             "disabled": "",
-            "groupParticipant": ["ADMINISTRATORS", "DEVELOPER", "SYSTEM ANALYST"],
+            "groupParticipant": ["ADMINISTRATORS", "DEVELOPER", "SYSTEM_ANALYST"],
             "accessSettings": ["EDIT", "EXECUTE"],
             "accountSettings": ["DELETE", "EDIT", "EXECUTE"],
             "changePassword": ["DELETE", "EDIT", "EXECUTE"],

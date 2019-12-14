@@ -208,11 +208,11 @@ table tbody tr td i {
 .table-striped tbody tr:nth-of-type(odd) {
     background-color: rgba(255, 255, 255, .08);
 }
-td {
+td .ellipsis {
     max-width: 0px;
     overflow: hidden;
-    text-overflow: ellipsis;
     white-space: nowrap;
+    text-overflow: ellipsis;
 }
 [title] {
     cursor: help;

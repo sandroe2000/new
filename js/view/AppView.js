@@ -44,7 +44,7 @@ export class AppView {
     _footer(){
 
         return `<div class="container">
-                    <span class="text-muted">© 2019 <Strong><span class="text-warning">Woola</span><span style="color:#FFF">weaver</span></strong>, Designed and built with all the love in the world by <a href="https://github.com/sandroe2000">sandroe2000</a></span>
+                    <span class="text-muted">© 2019 <Strong><span class="text-warning">Woola</span><span style="color:#FFF">weaver</span></strong>, <nobr>Designed and built with all the love in the world by <a href="https://github.com/sandroe2000">sandroe2000</a></span></nobr>
                 </div>`;
     }
 

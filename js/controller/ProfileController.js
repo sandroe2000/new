@@ -25,12 +25,13 @@ export class ProfileController {
 
     init(){
 
-        document.querySelector('#btnSaveProfile').addEventListener('click', (event) =>{
+        $('.btnSaveProfile').click((event) =>{
 
             this.profileService.saveOrUpdate(this.profile.profile);
+            $('#profileTab li:eq(0) a').tab('show');
         });
 
-        document.querySelector('#btnNewProfile').addEventListener('click', (event) =>{
+        $('.btnNewProfile').click((event) =>{
 
             this.profile = new Profile();
             this.scopeHelper = new ScopeHelper();
