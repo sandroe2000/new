@@ -54,7 +54,8 @@ export class ProfileService {
         if(this.profileController && this.profileController.tableProfilePage){
             page = this.profileController.tableProfilePage;
         }
-        let uri = `/profiles/search?name=${name}&groupParticipant=${group}&size=${size}&page=${page}`;
+        //let uri = `/profiles/search?name=${name}&groupParticipant=${group}&size=${size}&page=${page}`;
+        let uri = `data/profiles.json?name=${name}&groupParticipant=${group}&size=${size}&page=${page}`;
         
         const response = await fetch(encodeURI(uri), {
             method: 'GET'

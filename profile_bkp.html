@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="assets/open-iconic/font/css/open-iconic-bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/material-floating-menu-action-buttons/css/jquery-fab-button.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="css/profile.css" />
 
@@ -43,6 +42,21 @@
                             <span class="oi oi-person mr-2"></span>Personal Information
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="account-tab" data-toggle="tab" href="#account" role="tab" aria-controls="account" aria-selected="false">
+                            <span class="oi oi-globe mr-2"></span>Account Settings
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="password-tab" data-toggle="tab" href="#password" role="tab" aria-controls="password" aria-selected="false">
+                            <span class="oi oi-ellipses mr-2"></span>Change Password
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">
+                            <span class="oi oi-key mr-2"></span>Access Settings
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="tab-content" id="myTabContent">
@@ -62,24 +76,22 @@
                                 </div>
                                 <div class="col-md-3">
                                     <button type="button" id="btnSearchProfiles" class="btn btn-success mt-4 w-30">Search</button>                                
-                                    <button type="button" id="btnNewProfile" class="btn btn-light mt-4 ml-2 w-30 btnNewProfile">New</button>                                
-                                    <button type="button" id="btnSaveProfile" class="btn btn-primary mt-4 ml-2 w-30 btnSaveProfile">Save</button>
+                                    <button type="button" id="btnNewProfile" class="btn btn-light mt-4 ml-2 w-30">New</button>                                
+                                    <button type="button" id="btnSaveProfile" class="btn btn-primary mt-4 ml-2 w-30">Save</button>
                                 </div>
                             </div>
-                            <div class="table-responsive">
-                                <table id="tableProfile" class="table table-striped" style="width: 100%;">
-                                    <thead>
-                                        <tr>
-                                            <th class="w-10">#<span class="oi oi-elevator ml-2"></span></th>
-                                            <th class="w-40">Name<span class="oi oi-caret-bottom ml-2"></span></th>
-                                            <th class="w-20">Groups<span class="oi oi-elevator ml-2"></span></th>
-                                            <th class="w-10">Disabled</th>
-                                            <th class="w-10"></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody></tbody>
-                                </table>
-                            </div>
+                            <table id="tableProfile" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="w-10">#<span class="oi oi-elevator ml-2"></span></th>
+                                        <th class="w-40">Name<span class="oi oi-caret-bottom ml-2"></span></th>
+                                        <th class="w-20">Groups<span class="oi oi-elevator ml-2"></span></th>
+                                        <th class="w-10">Disabled</th>
+                                        <th class="w-10"></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
                             <select id="tableProfileSize" class="form-control w-10 mr-3" style="float:left; min-width: 75px;">
                                 <option value="5">5</option>
                                 <option value="10">10</option>
@@ -87,13 +99,15 @@
                                 <option value="50">50</option>
                                 <option value="100">100</option>
                             </select>
-                            <div aria-label="Page navigation">
+                            <nav aria-label="Page navigation">
                                 <ul class="pagination" style="border-radius: 0">
                                     <li class="page-item disabled">
                                         <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
                                     </li>
                                     <li class="page-item active" aria-current="page">
-                                        <span class="page-link">1<span class="sr-only">(current)</span>
+                                        <span class="page-link">
+                                            1
+                                            <span class="sr-only">(current)</span>
                                         </span>
                                     </li>
                                     <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -102,7 +116,7 @@
                                         <a class="page-link" href="#">Next</a>
                                     </li>
                                 </ul>
-                            </div>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -171,6 +185,9 @@
                     </div>
                     <!--/: Personal Information-->
 
+                </div>
+                <div class="tab-pane fade mb-3" id="account" role="tabpanel" aria-labelledby="account-tab">
+                    
                     <!--:: Account Settings-->
                     <div class="row mt-3">
                         <div class="col-md-12 mt-2">
@@ -253,6 +270,9 @@
                     </div>
                     <!--/: Account Settings-->
 
+                </div>
+                <div class="tab-pane fade mb-3" id="password" role="tabpanel" aria-labelledby="password-tab">
+
                     <!--:: Change Password-->
                     <div class="alert alert-danger fade show mt-3 mb-3" role="alert">
                         <div class="row">
@@ -281,9 +301,7 @@
                             <label class="mb-0">Current Password</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <div class="form-group pass_show"> 
-                                <input id="old-password" type="password" class="form-control" />
-                            </div>
+                            <input id="old-password" type="password" class="form-control" />
                             <small id="passwordlHelp" class="form-text text-muted"><a href="#">Forgot password ?</a></small>
                         </div>
                     </div>
@@ -292,10 +310,8 @@
                             <label class="mb-0">New Password</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <div class="form-group pass_show mb-0">
-                                <input id="new-password" type="password" class="form-control" />
-                            </div>
-                            <div id="password-strength-status" class="mt-0"></div>
+                            <input id="new-password" type="password" class="form-control" />
+                            <div id="password-strength-status"></div>
                         </div>
                     </div>
                     <div class="row">
@@ -303,12 +319,13 @@
                             <label class="mb-0">Verify Password</label>
                         </div>
                         <div class="col-md-9 mt-2">
-                            <div class="form-group pass_show">
-                                <input type="password" class="form-control" />
-                            </div>
+                            <input type="confirm-Password" class="form-control" />
                         </div>
                     </div>
 
+                </div>
+                <div class="tab-pane fade mb-3" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                    
                     <div class="alert alert-success fade show mt-3 mb-3" role="alert">
                         <div class="row">
                             <div class="col-auto align-self-start">
@@ -325,10 +342,10 @@
                         </div>
                     </div>
 
-                    <!--:: Groups-->               
+                    <!--:: Settings-->               
                     <div class="row mt-3">
                         <div class="col-md-12 mt-2">
-                            <h5>Groups:</h5>
+                            <h5>Settings</h5>
                         </div>
                     </div>
                     <div class="row">
@@ -357,20 +374,22 @@
                                     <label class="custom-control-label" for="customChkGrp5">Manager</label>
                                 </div>
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
-                                <input type="checkbox" class="custom-control-input" id="customChkGrp6" data-bind="groupParticipant" value="OPERATIONS_ANALYST" />
+                                <input type="checkbox" class="custom-control-input" id="customChkGrp6" data-bind="groupParticipant" value="OPERATIONS ANALYST" />
                                 <label class="custom-control-label" for="customChkGrp6">Operations Analyst</label>
                             </div>                        
                             <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
-                                <input type="checkbox" class="custom-control-input" id="customChkGrp7" data-bind="groupParticipant" value="SYSTEM_ANALYST" />
+                                <input type="checkbox" class="custom-control-input" id="customChkGrp7" data-bind="groupParticipant" value="SYSTEM ANALYST" />
                                 <label class="custom-control-label" for="customChkGrp7">System Analyst</label>
                             </div>
                         </div>
                     </div>
 
+                    <hr class="mt-4" />
+
                     <!--:: Settings-->               
                     <div class="row">
                         <div class="col-md-12">
-                            <h5>Access:</h5>
+                            <h5>Access</h5>
                         </div>
                     </div>
                     <div class="row">
@@ -521,24 +540,6 @@
     </div>
     <!--/: Container-->
 
-    <div class="fixed-action-btn">
-        <a class="btn-floating btn-large">
-          <i class="large fa fa-bars"></i>
-        </a>
-        <ul style="list-style-type:none;margin:0 0 -10px -40px;">
-          <li>
-            <a class="btn-floating btn-large btnNewProfile">
-              <i class="fa fa-file-o"></i>
-            </a>
-          </li>
-          <li>
-            <a class="btn-floating btn-large btnSaveProfile">
-              <i class="fa fa-save"></i>
-            </a>
-          </li>
-        </ul>
-    </div>
-      
     <!--:: Footer-->
     <footer id="navFooter" class="footer bg-dark mt-auto py-2"></footer>
     <!--/: Footer-->
@@ -577,25 +578,9 @@
     <script src="assets/jquery/dist/jquery.min.js"></script>
     <script src="assets/popper.js/dist/umd/popper.min.js"></script>
     <script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/material-floating-menu-action-buttons/js/jquery-fab-button.min.js"></script>
 
     <!-- Apps Modules -->
     <script type="module" src="js/Profiles.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('.pass_show').append('<i class="fa fa-eye ptxt"></i>');  
-        });
-            
-        $(document).on('click','.pass_show .ptxt', function(){ 
-
-            $(this).toggleClass('fa-eye fa-eye-slash');
-
-            $(this).prev().attr('type', function(index, attr){
-            return attr == 'password' ? 'text' : 'password'; 
-            }); 
-
-        });
-    </script>
 
 </body>
 </html>

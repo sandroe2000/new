@@ -36,26 +36,53 @@ export class ScopeHelper {
 
                 if(JSON.stringify(data).indexOf(propToBind) > -1){
 
-                    data[propToBind].forEach(chk => {
-                        if(element.value == chk){
+                    if(typeof data[propToBind] === 'string'){
+
+                        if(element.value == data[propToBind]){
                             element.checked = true;
                         }
-                    });
-                
+                    }
+
+                    if( Array.isArray( data[propToBind])){
+
+                        data[propToBind].forEach(chk => {
+                            if(element.value == chk){
+                                element.checked = true;
+                            }
+                        });
+                    }                
 
                     element.addEventListener('click', (event) => {
 
                         if(event.target.checked){
-                            if(data[event.target.getAttribute('data-bind')].indexOf(event.target.value) === -1) {
+                            
+                            if(typeof data[event.target.getAttribute('data-bind')] === 'string'){
+
+                                data[event.target.getAttribute('data-bind')] = event.target.value;
+                            }
+                            
+                            if( Array.isArray(data[event.target.getAttribute('data-bind')]) ){
+
                                 data[event.target.getAttribute('data-bind')].push(event.target.value);
                             }
                         }else{
                             if(data[event.target.getAttribute('data-bind')].indexOf(event.target.value) > -1) {
-                                let arr = data[event.target.getAttribute('data-bind')];
-                                data[event.target.getAttribute('data-bind')] = arr.filter(item => item != event.target.value);
+
+                                if(typeof data[event.target.getAttribute('data-bind')] === 'string'){
+
+                                    data[event.target.getAttribute('data-bind')] = "";
+                                }
+
+                                if( Array.isArray( data[event.target.getAttribute('data-bind')] )){
+                                    
+                                    let arr = data[event.target.getAttribute('data-bind')];
+                                    data[event.target.getAttribute('data-bind')] = arr.filter(item => item != event.target.value);
+                                }
                             }
                         }
 
+                        console.log(data);
+                        
                     });
                 }
             }
