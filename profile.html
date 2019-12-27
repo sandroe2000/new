@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="assets/open-iconic/font/css/open-iconic-bootstrap.min.css" />
     <link rel="stylesheet" href="assets/material-floating-menu-action-buttons/css/jquery-fab-button.css" />
+    <link rel="stylesheet" href="assets/overlayScrollbars/css/OverlayScrollbars.min.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="css/profile.css" />
 
@@ -24,7 +25,7 @@
     <!--:/ Header-->
 
     <!--:: Container-->
-    <div class="container">
+    <div id="main-container" class="container">
 
         <form id="frmProfile" data-frm-bind="frmProfile">
 
@@ -551,7 +552,7 @@
     </div>
       
     <!--:: Footer-->
-    <footer id="navFooter" class="footer bg-dark mt-auto py-2"></footer>
+    <footer id="navFooter" class="footer bg-dark mt-auto"></footer>
     <!--/: Footer-->
 
     <!--:: Modal -->
@@ -585,16 +586,18 @@
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="assets/jquery/dist/jquery.min.js"></script>
+    <script src="assets/jquery/dist/jquery.js"></script>
     <script src="assets/popper.js/dist/umd/popper.min.js"></script>
     <script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="assets/material-floating-menu-action-buttons/js/jquery-fab-button.min.js"></script>
+    <script src="assets/overlayScrollbars/js/OverlayScrollbars.min.js"></script>
 
     <!-- Apps Modules -->
     <script type="module" src="js/Profiles.js"></script>
     <script>
         $(document).ready(function(){
-            $('.pass_show').append('<i class="fa fa-eye ptxt"></i>');  
+
+            $('.pass_show').append('<i class="fa fa-eye ptxt"></i>'); 
         });
             
         $(document).on('click','.pass_show .ptxt', function(){ 
@@ -602,9 +605,15 @@
             $(this).toggleClass('fa-eye fa-eye-slash');
 
             $(this).prev().attr('type', function(index, attr){
-            return attr == 'password' ? 'text' : 'password'; 
+                return attr == 'password' ? 'text' : 'password'; 
             }); 
 
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            //The first argument are the elements to which the plugin shall be initialized
+            //The second argument has to be at least a empty object or a object with your desired options
+            OverlayScrollbars(document.querySelectorAll("body"), { });
         });
     </script>
 

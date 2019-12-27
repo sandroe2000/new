@@ -15,3 +15,7 @@
     background-color: #12CC1A;
     border:#0FA015 1px solid;
 }
+
+.btn-floating {
+    border: 1px solid #FFF;
+}
