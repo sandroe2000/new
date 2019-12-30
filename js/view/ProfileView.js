@@ -8,51 +8,49 @@ export class ProfileView {
         this.selectSearchGroup = selectSearchGroup;
         this.selectTimeZone = selectTimeZone;
         this.selectLanguage = selectLanguage;
+        this.init();
     }
 
-    _tableProfiles(model){ 
-        
-        return `${model.map(profile => `<tr data-id="${profile.id}">
-                    <td class="w-10">
-                        ${profile.id}
-                    </td>
-                    <td class="w-40 ellipsis" title="${profile.name}">
-                        ${profile.name}
-                    </td>
-                    <td class="w-20 ellipsis" title="${profile.groupParticipant}">
-                        ${profile.groupParticipant}
-                    </td>
-                    <td class="w-10">
-                        ${profile.disabled == null ? '' : profile.disabled}
-                    </td>
-                    <td class="w-10 text-right">
-                        <span class="oi oi-pencil mr-4 ico-mouse-hand"></span>
-                        <span class="oi oi-trash mr-2 ico-mouse-hand"></span>
-                    </td>
-                </tr>`).join('')}`;
-    } 
+    init(){
 
-    _language(data){
+        $(document).ready(function(){
 
-        return  `<option value="">Please choose an option</option>${data.list.map(item =>
-                `<option value="${item.value}">${item.descr}</option>`).join('')}`;
+            $('.pass_show').append('<i class="fa fa-eye ptxt"></i>'); 
+        });
+
+        $(document).on('click','.pass_show .ptxt', function(){ 
+
+            $(this).toggleClass('fa-eye fa-eye-slash');
+
+            $(this).prev().attr('type', function(index, attr){
+                return attr == 'password' ? 'text' : 'password'; 
+            }); 
+
+        });
     }
 
-    _timeZone(data){
-
-        return  `<option value="">Please choose an option</option>${data.list.map(item =>
-                `<option data-offset="${item.dataOffset}" value="${item.value}">${item.descr}</option>`).join('')}`;
-    }
-
-    _groups(data){
-
-        return  `<option value="">Please choose an option</option>${data.list.map(item => 
-                `<option value="${item.value}">${item.descr}</option>`).join('')}`;
-    }
-    
     setTableProfiles(model) {
+
+        let tableProfiles = `${model.content.map(profile => `<tr data-id="${profile.id}">
+                                <td class="w-10">
+                                    ${profile.id}
+                                </td>
+                                <td class="w-40 ellipsis" title="${profile.name}">
+                                    ${profile.name}
+                                </td>
+                                <td class="w-20 ellipsis" title="${profile.groupParticipant}">
+                                    ${profile.groupParticipant}
+                                </td>
+                                <td class="w-10">
+                                    ${profile.disabled == null ? '' : profile.disabled}
+                                </td>
+                                <td class="w-10 text-right">
+                                    <span class="oi oi-pencil mr-4 ico-mouse-hand"></span>
+                                    <span class="oi oi-trash mr-2 ico-mouse-hand"></span>
+                                </td>
+                            </tr>`).join('')}`;
         
-        this.tableProfiles.innerHTML = this._tableProfiles(model);
+        this.tableProfiles.innerHTML = tableProfiles;
 
         document.querySelectorAll('.oi.oi-pencil').forEach(item => {
             item.addEventListener('click', event => {                
@@ -67,10 +65,42 @@ export class ProfileView {
                 this.profileController.delete(tr.getAttribute('data-id'));
             });
         });
+                
+
+        let objPagination = document.querySelector('.pagination');
+        this.setPaginationProfiles(objPagination, model);
+
     }
 
     setPaginationProfiles(objPagination, options, i){
-        let more = false;
+
+        let hasPreviousPage = false;
+        let hasNextPage = false;
+
+        let pg = `<ul class="pagination" style="border-radius: 0">
+                    <li class="${options.first ? 'page-item disabled' : 'page-item'}">
+                        <a class="page-link" href="#">← First</a>
+                    </li>
+                    <li class="${hasPreviousPage? 'page-item' : 'page-item disabled'}">
+                        <a class="page-link" href="#" title="Go to previous page">«</a>
+                    </li>                        
+
+                    ${options.content.map((item, index) => 
+                    `<li class="${index==options.number ? 'page-item active' : 'page-item'}">
+                        <a class="page-link" href="#"><span>${index+1}</span></a>
+                    </li>`).join('')}                    
+
+                    <li class="${hasNextPage? 'page-item' : 'page-item disabled'}">
+                        <a class="page-link" href="#" title="Go to next page">»</a>
+                    </li>
+                    <li class="${options.last? 'page-item disabled' : 'page-item'}">
+                        <a class="page-link" href="#">Last →</a>
+                    </li>
+                </ul>`;
+
+        objPagination.innerHTML = pg;
+
+        /*let more = false;
         let label = i+1;
         if(i>=20){
             more = true;
@@ -94,22 +124,30 @@ export class ProfileView {
         a.appendChild(aNumber);
         li.appendChild(a);
         objPagination.appendChild(li);
+        */
     }
 
     setGroups(data){
 
-        let groups = this._groups(data);
+        let groups = `<option value="">Please choose an option</option>${data.list.map(item => 
+                     `<option value="${item.value}">${item.descr}</option>`).join('')}`;
+
         this.selectGroups.innerHTML = groups;
         this.selectSearchGroup.innerHTML = groups;
     }
 
     setLanguage(data){
 
-        this.selectLanguage.innerHTML = this._language(data);
+        let language = `<option value="">Please choose an option</option>${data.list.map(item =>
+                       `<option value="${item.value}">${item.descr}</option>`).join('')}`;
+        this.selectLanguage.innerHTML = language;
     }
 
     setTimeZone(data){
 
-        this.selectTimeZone.innerHTML = this._timeZone(data);
+        let timeZone = `<option value="">Please choose an option</option>${data.list.map(item =>
+                       `<option data-offset="${item.dataOffset}" value="${item.value}">${item.descr}</option>`).join('')}`;
+
+        this.selectTimeZone.innerHTML = timeZone;
     }
 }

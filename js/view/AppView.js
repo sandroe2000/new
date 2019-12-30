@@ -1,10 +1,27 @@
+import { Constants } from '../const/Constants.js';
+
 export class AppView {
 
     constructor(navHeader, navFooter){
 
+        this.constants = new Constants();
         this.navHeader = navHeader;
         this.navFooter = navFooter;
         this.setLayout();
+        this.init();
+    }
+
+    init(){
+
+        document.querySelectorAll('ul.navbar-nav.mr-auto li').forEach((li) => {
+            
+            let url = window.location.href;
+            url = url.replace(this.constants.URL_N_PORT, '').replace('.html', '');
+        
+            if( li.innerHTML.indexOf(url) > -1 ){
+                li.classList.add('active');
+            }
+        });
     }
 
     _header(){

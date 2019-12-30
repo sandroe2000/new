@@ -15,7 +15,7 @@ export class Profile {
             "timeZone": "",
             "communication": [],
             "passwordResetVerif": [],
-            "disabled": null,
+            "disabled": [],
             "groupParticipant": [],
             "accessSettings": [],
             "accountSettings": [],

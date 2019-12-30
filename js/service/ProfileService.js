@@ -1,5 +1,3 @@
-import { ProfileView } from '../view/ProfileView.js';
-
 export class ProfileService {
 
     constructor(controller){
@@ -9,62 +7,46 @@ export class ProfileService {
         this.language = [];
         this.profiles = [];
         this.profileController = controller;
-        this.profileView = new ProfileView( this.profileController, 
-                                            document.querySelector('#tableProfile tbody'),
-                                            document.querySelector('#groups'),
-                                            document.querySelector('#searchGroup'),
-                                            document.querySelector('#timeZone'),
-                                            document.querySelector('#language'));
     }
 
-    async setGroups(){
+    async getGroups(){
+        
         const response = await fetch('data/groups.json', {
             method: 'GET'
         });
-        this.groups = await response.json();
-        this.profileView.setGroups(this.groups);
 
+        this.groups = await response.json();
+        return this.groups;
     }
 
-    async setTimeZone(){
+    async getTimeZone(){
+        
         const response = await fetch('data/timeZone.json', {
             method: 'GET'
         });
+
         this.timeZone = await response.json();
-        this.profileView.setTimeZone(this.timeZone);
+        return this.timeZone;
     }
 
-    async setLanguage(){
+    async getLanguage(){
+       
         const response = await fetch('data/language.json', {
             method: 'GET'
         });
+
         this.language = await response.json();
-        this.profileView.setLanguage(this.language);
+        return this.language;
     }
 
-    async findAll(){
+    async findAll(uri){
 
-        this.profileController.startWait();
-
-        let name = document.querySelector('#searchName').value;
-        let group = document.querySelector('#searchGroup').value;        
-        let size = document.querySelector('#tableProfileSize').value; 
-        let page = 0;
-
-        if(this.profileController && this.profileController.tableProfilePage){
-            page = this.profileController.tableProfilePage;
-        }
-        //let uri = `/profiles/search?name=${name}&groupParticipant=${group}&size=${size}&page=${page}`;
-        let uri = `data/profiles.json?name=${name}&groupParticipant=${group}&size=${size}&page=${page}`;
-        
         const response = await fetch(encodeURI(uri), {
             method: 'GET'
         });
 
         this.profiles = await response.json();
-        this.profileView.setTableProfiles(this.profiles.content);
-
-        this.profileController.stopWait();
+        return this.profiles;
     }
 
     findById(id){
@@ -82,6 +64,9 @@ export class ProfileService {
     }
 
     async saveOrUpdate(profile){
+
+        console.log(profile);
+        return;
 
         let method = 'POST';
         let uri = '/profiles';
