@@ -35,6 +35,8 @@ class ProfileController {
             document.querySelector('#timeZone'),
             document.querySelector('#language'));
 
+        this.page = 0;
+
         this.init();
     }
 
@@ -66,6 +68,7 @@ class ProfileController {
             this.findAll();
         } ,false);
 
+        /*
         document.querySelectorAll('.page-link').forEach((pageLink) => {
 
             pageLink.addEventListener('click', (event) => {
@@ -87,6 +90,7 @@ class ProfileController {
                 this.findAll();
             } ,false);
         });
+        */
 
         this.findAll();        
         this.setGroups();
@@ -101,19 +105,57 @@ class ProfileController {
         let name = document.querySelector('#searchName').value;
         let group = document.querySelector('#searchGroup').value;        
         let size = document.querySelector('#tableProfileSize').value; 
-        let page = 0;
 
         if(this.tableProfilePage){
-            page = this.tableProfilePage;
+            this.page = this.tableProfilePage;
         }
         
-        //let uri = `/profiles/search?name=${name}&groupParticipant=${group}&size=${size}&page=${page}`;
-        let uri = `data/profiles.json?name=${name}&groupParticipant=${group}&size=${size}&page=${page}`;
+        let uri = `/profiles/search?name=${name}&groupParticipant=${group}&size=${size}&page=${this.page}`;
+        //let uri = `data/profiles.json?name=${name}&groupParticipant=${group}&size=${size}&page=${this.page}`;
         
-        this.profiles = await this.profileService.findAll(uri);
-        this.profileView.setTableProfiles(this.profiles);
+        this.profile = await this.profileService.findAll(uri);
+        this.profileView.setTableProfiles(this.profile);
+
+        $('#profilePagination').pagination({
+            pages: this.profile.totalPages,
+            currentPage: this.profile.number,
+            ellipsePageSet: true,
+            prevText: "Anterior",
+            nextText: "Próximo"
+        });
+
+        document.querySelector('#profilePagination').addEventListener('click', this.setPage, false);
+
+        console.log(this.profile);
 
         this.stopWait();
+    }
+
+    setPage (event){
+        debugger;
+        if(event.target.nodeName=='UL'){
+            return false;
+        }
+        if(event.target.text=="Anterior"){
+            let prev = 0;
+            if((profileController.page-1) > 0){
+                prev = (profileController.page-1) ;
+            }
+            profileController.page = prev;
+            profileController.findAll();
+            return;
+        }
+        if(event.target.text=="Próximo"){
+            let next = profileController.page;
+            if((profileController.page+1) < this.profile.totalPages){
+                next = (profileController.page+1)  ;
+            }
+            profileController.page = next;
+            profileController.findAll();
+            return;
+        }
+        profileController.page = new Number(event.target.text)-1;
+        profileController.findAll();
     }
 
     async setGroups(){

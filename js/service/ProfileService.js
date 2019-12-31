@@ -66,7 +66,7 @@ export class ProfileService {
     async saveOrUpdate(profile){
 
         console.log(profile);
-        return;
+        //return;
 
         let method = 'POST';
         let uri = '/profiles';

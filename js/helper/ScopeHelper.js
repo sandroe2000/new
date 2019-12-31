@@ -79,10 +79,7 @@ export class ScopeHelper {
                                     data[event.target.getAttribute('data-bind')] = arr.filter(item => item != event.target.value);
                                 }
                             }
-                        }
-
-                        console.log(data);
-                        
+                        }                        
                     });
                 }
             }

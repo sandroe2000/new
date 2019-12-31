@@ -65,66 +65,6 @@ export class ProfileView {
                 this.profileController.delete(tr.getAttribute('data-id'));
             });
         });
-                
-
-        let objPagination = document.querySelector('.pagination');
-        this.setPaginationProfiles(objPagination, model);
-
-    }
-
-    setPaginationProfiles(objPagination, options, i){
-
-        let hasPreviousPage = false;
-        let hasNextPage = false;
-
-        let pg = `<ul class="pagination" style="border-radius: 0">
-                    <li class="${options.first ? 'page-item disabled' : 'page-item'}">
-                        <a class="page-link" href="#">← First</a>
-                    </li>
-                    <li class="${hasPreviousPage? 'page-item' : 'page-item disabled'}">
-                        <a class="page-link" href="#" title="Go to previous page">«</a>
-                    </li>                        
-
-                    ${options.content.map((item, index) => 
-                    `<li class="${index==options.number ? 'page-item active' : 'page-item'}">
-                        <a class="page-link" href="#"><span>${index+1}</span></a>
-                    </li>`).join('')}                    
-
-                    <li class="${hasNextPage? 'page-item' : 'page-item disabled'}">
-                        <a class="page-link" href="#" title="Go to next page">»</a>
-                    </li>
-                    <li class="${options.last? 'page-item disabled' : 'page-item'}">
-                        <a class="page-link" href="#">Last →</a>
-                    </li>
-                </ul>`;
-
-        objPagination.innerHTML = pg;
-
-        /*let more = false;
-        let label = i+1;
-        if(i>=20){
-            more = true;
-            label = '...';
-        }
-        let li = document.createElement('li');
-        if(i==new Number(options.page)){
-            li.setAttribute('class', 'page-item active');
-        }else{
-            if(more){
-                li.setAttribute('class', 'page-item disabled');
-            }else{
-                li.setAttribute('class', 'page-item')
-            }
-        }
-        let a = document.createElement('a');
-            a.setAttribute('class', 'page-link');
-            a.setAttribute('href', '#');
-        let aNumber = document.createTextNode(label);
-
-        a.appendChild(aNumber);
-        li.appendChild(a);
-        objPagination.appendChild(li);
-        */
     }
 
     setGroups(data){

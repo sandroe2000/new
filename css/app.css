@@ -259,6 +259,25 @@ td .ellipsis {
     border-bottom-right-radius: 0 !important;
 }
 
+.ellipse {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.current {
+
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    border: 1px solid #dee2e6;    
+    color: #0056b3;
+    text-decoration: none;
+    background-color: #FFF !important;
+    z-index: 2;
+}
+
 .w-10{ 
     width: 10%; 
 }
