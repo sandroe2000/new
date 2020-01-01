@@ -349,7 +349,7 @@
 					var $this = $(this),
 						val = (parseInt($this.parent().prev().text(), 10) || 0) + 1;
 					$this
-						.html('<input type="number" min="1" max="' + o.pages + '" step="1" value="' + val + '">')
+						.html('<input class="form-control number-pagination" type="number" min="1" max="' + o.pages + '" step="1" value="' + val + '">')
 						.find('input')
 						.focus()
 						.click(function(event) {

@@ -65,9 +65,6 @@ export class ProfileService {
 
     async saveOrUpdate(profile){
 
-        console.log(profile);
-        //return;
-
         let method = 'POST';
         let uri = '/profiles';
 
@@ -84,8 +81,6 @@ export class ProfileService {
             },
             body: JSON.stringify(profile)
         });
-        document.querySelector('#searchName').value = profile.name;
-        await this.findAll();
     }
 
     async delete(id){

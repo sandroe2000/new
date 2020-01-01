@@ -18,505 +18,515 @@
     
     <title>WoolaWeaver - SaaS</title>
   </head>
+
   <body class="d-flex flex-column h-100">
+  
+    <div id="all">
 
-    <!--:: Header-->
-    <div id="navHeader"></div>
-    <!--:/ Header-->
+        <!--:: Header-->
+        <div id="navHeader"></div>
+        <!--:/ Header-->
 
-    <!--:: Container-->
-    <div id="main-container" class="container">
+        <!--:: Container-->
+        <div id="main-container" class="container">
 
-        <form id="frmProfile" data-frm-bind="frmProfile">
+            <form id="frmProfile" data-frm-bind="frmProfile">
 
-            <!--:: Content-->
-            <div class="scroller scroller-left mt-2"><i class="fa fa-chevron-left"></i></div>
-            <div class="scroller scroller-right mt-2"><i class="fa fa-chevron-right"></i></div>
-            <div class="wrapper">
-                <ul class="nav nav-tabs list mt-2" id="profileTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">
-                            <span class="oi oi-list mr-2"></span>List of Profiles
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="personal-tab" data-toggle="tab" href="#personal" role="tab" aria-controls="personal" aria-selected="true">
-                            <span class="oi oi-person mr-2"></span>Personal Information
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active mb-3" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-
-                    <!--:: Profiles-->
-                    <div class="row mt-3">
-                        <div id="tableProfileView" class="col-md-12 mt-2">
-                            <div class="row mb-3">
-                                <div class="col-md-5">
-                                    <label class="mb-0">Search</label>
-                                    <input id="searchName" type="text" class="form-control" />
-                                </div>
-                                <div class="col-md-5">
-                                    <label class="mb-0">Groups</label>
-                                    <select id="searchGroup" class="form-control"></select>
-                                </div>
-                                <div class="col-md-2">
-                                    <button type="button" id="btnSearchProfiles" class="btn btn-success mt-4 w-100">Search</button>                                
-                                </div>
-                            </div>
-                            <div class="table-responsive">
-                                <table id="tableProfile" class="table table-striped" style="width: 100%;">
-                                    <thead>
-                                        <tr>
-                                            <th class="w-10">#<span class="oi oi-elevator ml-2"></span></th>
-                                            <th class="w-40">Name<span class="oi oi-caret-bottom ml-2"></span></th>
-                                            <th class="w-20">Groups<span class="oi oi-elevator ml-2"></span></th>
-                                            <th class="w-10">Disabled</th>
-                                            <th class="w-10"></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody></tbody>
-                                </table>
-                            </div>
-                            <select id="tableProfileSize" class="form-control w-10 mr-3" style="float:left; min-width: 75px;">
-                                <option value="5">5</option>
-                                <option value="10">10</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                            </select>
-                            <div aria-label="Page navigation">
-                                <ul id="profilePagination" class="pagination" style="border-radius: 0"></ulid="paginationCategory">
-                            </div>
-                        </div>
-                    </div>
+                <!--:: Content-->
+                <div class="scroller scroller-left mt-2"><i class="fa fa-chevron-left"></i></div>
+                <div class="scroller scroller-right mt-2"><i class="fa fa-chevron-right"></i></div>
+                <div class="wrapper">
+                    <ul class="nav nav-tabs list mt-2" id="profileTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">
+                                <span class="oi oi-list mr-2"></span>List of Profiles
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="personal-tab" data-toggle="tab" href="#personal" role="tab" aria-controls="personal" aria-selected="true">
+                                <span class="oi oi-person mr-2"></span>Personal Information
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="tab-pane fade mb-3" id="personal" role="tabpanel" aria-labelledby="personal-tab">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active mb-3" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
-                    <!--:: Personal Information-->
-                    <div class="row mt-3">
-                        <div class="col-md-12 mt-2">
-                            <h5>Customer Info:</h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label class="mb-0">Avatar</label>
-                        </div>
-                        <div class="col-md-9 mt-2">
-                            <div id="imgProfile1"></div>
-                            <div id="imgProfile2"></div>                            
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label class="mb-0">CPF</label>
-                        </div>
-                        <div class="col-md-9 mt-2">
-                            <input id="cpf" data-bind="cpf" type="text" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label class="mb-0">Name</label>
-                        </div>
-                        <div class="col-md-9 mt-2">
-                            <input id="name" data-bind="name" type="text" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label class="mb-0">birth date</label>
-                        </div>
-                        <div class="col-md-9 mt-2">
-                            <input id="birthDate" data-bind="birthDate" type="date" class="form-control" />
-                        </div>
-                    </div>
-
-                    <div class="row mt-3">
-                        <div class="col-md-12 mt-2">
-                            <h5>Contact Info:</h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label class="mb-0">Contact Phone</label>
-                        </div>
-                        <div class="col-md-9 mt-2">
-                            <input id="contactPhone" data-bind="contactPhone" type="text" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label class="mb-0">Email Address</label>
-                        </div>
-                        <div class="col-md-9 mt-2">
-                            <input id="emailAddress" data-bind="emailAddress" type="text" class="form-control" />
-                        </div>
-                    </div>
-                    <!--/: Personal Information-->
-
-                    <!--:: Account Settings-->
-                    <div class="row mt-3">
-                        <div class="col-md-12 mt-2">
-                            <h5>Account:</h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label class="mb-0">Username</label>
-                        </div>
-                        <div class="col-md-9 mt-2">
-                            <input id="username" data-bind="username" type="text" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label class="mb-0">Language</label>
-                        </div>
-                        <div class="col-md-9 mt-2">
-                            <select id="language" data-bind="language" class="form-control"></select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label>Time Zone</label>
-                        </div>
-                        <div class="col-md-9 mt-2">
-                            <select id="timeZone" data-bind="timeZone" class="form-control"></select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label class="mb-0" style="margin-top: 7px;">Communication</label>
-                        </div>
-                        <div class="col-md-9 mt-2">
-                            <div class="custom-control custom-checkbox mr-sm-2">
-                                <input type="checkbox" class="custom-control-input" id="communicationEmail" data-bind="communication" value="EMAIL"/>
-                                <label class="custom-control-label" for="communicationEmail">E-mail</label>
-                            </div>
-                            <div class="custom-control custom-checkbox mr-sm-2">
-                                <input type="checkbox" class="custom-control-input" id="communicationSMS" data-bind="communication" value="SMS"/>
-                                <label class="custom-control-label" for="communicationSMS">SMS</label>
-                            </div>
-                            <div class="custom-control custom-checkbox mr-sm-2">
-                                <input type="checkbox" class="custom-control-input" id="communicationWhatsApp" data-bind="communication" value="WHATSAPP"/>
-                                <label class="custom-control-label" for="communicationWhatsApp">WhatsApp</label>
-                            </div>
-                            <div class="custom-control custom-checkbox mr-sm-2">
-                                <input type="checkbox" class="custom-control-input" id="communicationPhone" data-bind="communication" value="PHONE"/>
-                                <label class="custom-control-label" for="communicationPhone">Phone</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label class="mb-0" style="margin-top: 7px;">Status</label>
-                        </div>
-                        <div class="col-md-9 mt-2">
-                            <div class="custom-control custom-checkbox mr-sm-2">
-                                <input type="checkbox" class="custom-control-input" id="statusDisabled" data-bind="disabled" value="S"/>
-                                <label class="custom-control-label" for="statusDisabled">Disabled</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md-12 mt-2">
-                            <h5>Security:</h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label class="mb-0">Login verification</label>
-                        </div>
-                        <div class="col-md-9 mt-2">
-                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Setup login verification</button>
-                            <p class="font-italic">After you log in, you will be asked for additional information to confirm your identity and protect your account from being compromised.  <a href="#" data-toggle="modal" data-target="#exampleModal">Learm more</a></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label class="mb-0" style="margin-top: 7px;">Password reset verification</label>
-                        </div>
-                        <div class="col-md-9 mt-2">
-                            <div class="custom-control custom-checkbox mr-sm-2">
-                                <input type="checkbox" class="custom-control-input" id="passwordReset" data-bind="passwordResetVerif" value="S" />
-                                <label class="custom-control-label" for="passwordReset">Require personal information to reset your password.</label>
-                            </div>
-                            <p class="font-italic">For extra security, this requires you to confirm your email or phone number when you reset your password. <a href="#" data-toggle="modal" data-target="#exampleModal">Learm more</a></p>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Deactivate your account ?</button>
-                        </div>
-                    </div>
-                    <!--/: Account Settings-->
-
-                    <!--:: Change Password-->
-                    <div class="alert alert-danger fade show mt-3 mb-3" role="alert">
-                        <div class="row">
-                            <div class="col-auto align-self-start">
-                                <i class="fa fa-2x fa-exclamation-triangle mt-2" aria-hidden="true"></i>
-                            </div>
-                            <div class="col">
-                                <strong>Configure user passwords to expire periodically.</strong><br> 
-                                Users will need warning that their passwords are going to expire, or they might inadvertently get locked out of the system!
-                            </div>
-                            <div class="col-auto align-self-start">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="row mt-3">
-                        <div class="col-md-12 mt-2">
-                            <h5>Change Or Recover Your Password:</h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label class="mb-0">Current Password</label>
-                        </div>
-                        <div class="col-md-9 mt-2">
-                            <div class="form-group pass_show"> 
-                                <input id="old-password" type="password" class="form-control" />
-                            </div>
-                            <small id="passwordlHelp" class="form-text text-muted"><a href="#">Forgot password ?</a></small>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label class="mb-0">New Password</label>
-                        </div>
-                        <div class="col-md-9 mt-2">
-                            <div class="form-group pass_show mb-0">
-                                <input id="new-password" type="password" class="form-control" />
-                            </div>
-                            <div id="password-strength-status" class="mt-0"></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label class="mb-0">Verify Password</label>
-                        </div>
-                        <div class="col-md-9 mt-2">
-                            <div class="form-group pass_show">
-                                <input type="password" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="alert alert-success fade show mt-3 mb-3" role="alert">
-                        <div class="row">
-                            <div class="col-auto align-self-start">
-                                <i class="fa fa-2x fa-check-circle mt-2" aria-hidden="true"></i>
-                            </div>
-                            <div class="col mt-2">
-                                Data has been saved successfully!
-                            </div>
-                            <div class="col-auto align-self-start">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--:: Groups-->               
-                    <div class="row mt-3">
-                        <div class="col-md-12 mt-2">
-                            <h5>Groups:</h5>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label class="mb-0" style="margin-top: 7px;">Group Participant:</label>
-                        </div>
-                        <div class="col-md-9 mt-2">
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
-                                <input type="checkbox" class="custom-control-input" id="customChkGrp1" data-bind="groupParticipant" value="ADMINISTRATORS" />
-                                <label class="custom-control-label" for="customChkGrp1">Administrators</label>
-                            </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
-                                <input type="checkbox" class="custom-control-input" id="customChkGrp2" data-bind="groupParticipant" value="ATTENDANT" />
-                                <label class="custom-control-label" for="customChkGrp2">Attendant</label>
-                            </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
-                                <input type="checkbox" class="custom-control-input" id="customChkGrp3" data-bind="groupParticipant" value="COORDINATOR" />
-                                <label class="custom-control-label" for="customChkGrp3">Coordinator</label>
-                            </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
-                                <input type="checkbox" class="custom-control-input" id="customChkGrp4" data-bind="groupParticipant" value="DEVELOPER" />
-                                <label class="custom-control-label" for="customChkGrp4">Developer</label>
-                            </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
-                                    <input type="checkbox" class="custom-control-input" id="customChkGrp5" data-bind="groupParticipant" value="MANAGER" />
-                                    <label class="custom-control-label" for="customChkGrp5">Manager</label>
+                        <!--:: Profiles-->
+                        <div class="row mt-3">
+                            <div id="tableProfileView" class="col-md-12 mt-2">
+                                <div class="row mb-3">
+                                    <div class="col-md-5">
+                                        <label class="mb-0">Search</label>
+                                        <input id="searchName" type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-md-5">
+                                        <label class="mb-0">Groups</label>
+                                        <select id="searchGroup" class="form-control"></select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="button" id="btnSearchProfiles" class="btn btn-success mt-4 w-100">Search</button>                                
+                                    </div>
                                 </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
-                                <input type="checkbox" class="custom-control-input" id="customChkGrp6" data-bind="groupParticipant" value="OPERATIONS_ANALYST" />
-                                <label class="custom-control-label" for="customChkGrp6">Operations Analyst</label>
-                            </div>                        
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
-                                <input type="checkbox" class="custom-control-input" id="customChkGrp7" data-bind="groupParticipant" value="SYSTEM_ANALYST" />
-                                <label class="custom-control-label" for="customChkGrp7">System Analyst</label>
+                                <div class="table-responsive">
+                                    <table id="tableProfile" class="table table-striped" style="width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th class="w-10">#<span class="oi oi-elevator ml-2"></span></th>
+                                                <th class="w-40">Name<span class="oi oi-caret-bottom ml-2"></span></th>
+                                                <th class="w-20">Groups<span class="oi oi-elevator ml-2"></span></th>
+                                                <th class="w-10">Disabled</th>
+                                                <th class="w-10"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                                <select id="tableProfileSize" class="form-control w-10 mr-3" style="float:left; min-width: 75px;">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                                <div aria-label="Page navigation">
+                                    <ul id="profilePagination" class="pagination" style="border-radius: 0"></ulid="paginationCategory">
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="tab-pane fade mb-3" id="personal" role="tabpanel" aria-labelledby="personal-tab">
 
-                    <!--:: Settings-->               
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h5>Access:</h5>
+                        <!--:: Personal Information-->
+                        <div class="row mt-3">
+                            <div class="col-md-12 mt-2">
+                                <h5>Customer Info:</h5>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label>Access Group:</label>
-                        </div>                
-                        <div class="col-md-9">
-                            <select id="groups" class="form-control"></select>                            
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label class="mb-0">Avatar</label>
+                            </div>
+                            <div class="col-md-9 mt-2">
+                                <div id="imgProfile1"></div>
+                                <div id="imgProfile2"></div>                            
+                            </div>
                         </div>
-                    </div>
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label class="mb-0">CPF</label>
+                            </div>
+                            <div class="col-md-9 mt-2">
+                                <input id="cpf" data-bind="cpf" type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label class="mb-0">Name</label>
+                            </div>
+                            <div class="col-md-9 mt-2">
+                                <input id="name" data-bind="name" type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label class="mb-0">birth date</label>
+                            </div>
+                            <div class="col-md-9 mt-2">
+                                <input id="birthDate" data-bind="birthDate" type="date" class="form-control" />
+                            </div>
+                        </div>
 
-                    <!--:: Access Settings-->
-                    <div class="row mt-3">
-                        <div class="col-md-3 col-label">
-                            <label>Access Settings:</label>
-                        </div>                
-                        <div class="col-md-9">
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="accessSettingsAll">
-                                <label class="custom-control-label" for="accessSettingsAll">All</label>
-                            </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="accessSettingsDELETE" data-bind="accessSettings" value="DELETE" />
-                                <label class="custom-control-label" for="accessSettingsDELETE">Delete</label>
-                            </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="accessSettingsEDIT" data-bind="accessSettings" value="EDIT" />
-                                <label class="custom-control-label" for="accessSettingsEDIT">Edit</label>
-                            </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="accessSettingsEXECUTE" data-bind="accessSettings" value="EXECUTE" />
-                                <label class="custom-control-label" for="accessSettingsEXECUTE">Execute</label>
+                        <div class="row mt-3">
+                            <div class="col-md-12 mt-2">
+                                <h5>Contact Info:</h5>
                             </div>
                         </div>
-                    </div>
-                    <!--/: Access Settings-->
-
-                    <!--:: Account Settings-->
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label>Account Settings:</label>
-                        </div>                
-                        <div class="col-md-9">
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="accountSettings">
-                                <label class="custom-control-label" for="accountSettings">All</label>
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label class="mb-0">Contact Phone</label>
                             </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="accountSettingsDELETE" data-bind="accountSettings" value="DELETE" />
-                                <label class="custom-control-label" for="accountSettingsDELETE">Delete</label>
-                            </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="accountSettingsEDIT" data-bind="accountSettings" value="EDIT" />
-                                <label class="custom-control-label" for="accountSettingsEDIT">Edit</label>
-                            </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="accountSettingsEXECUTE" data-bind="accountSettings" value="EXECUTE" />
-                                <label class="custom-control-label" for="accountSettingsEXECUTE">Execute</label>
+                            <div class="col-md-9 mt-2">
+                                <input id="contactPhone" data-bind="contactPhone" type="text" class="form-control" />
                             </div>
                         </div>
-                    </div>
-                    <!--/: Account Settings-->
-
-                    <!--:: Change Password-->
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label>Change Password:</label>
-                        </div>                
-                        <div class="col-md-9">
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="changePassword">
-                                <label class="custom-control-label" for="changePassword">All</label>
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label class="mb-0">Email Address</label>
                             </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="changePasswordDELETE" data-bind="changePassword" value="DELETE" />
-                                <label class="custom-control-label" for="changePasswordDELETE">Delete</label>
-                            </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="changePasswordEDIT" data-bind="changePassword" value="EDIT" />
-                                <label class="custom-control-label" for="changePasswordEDIT">Edit</label>
-                            </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="changePasswordEXECUTE" data-bind="changePassword" value="EXECUTE" />
-                                <label class="custom-control-label" for="changePasswordEXECUTE">Execute</label>
+                            <div class="col-md-9 mt-2">
+                                <input id="emailAddress" data-bind="emailAddress" type="text" class="form-control" />
                             </div>
                         </div>
-                    </div>
-                    <!--/: Change Password-->
+                        <!--/: Personal Information-->
 
-                    <!--:: List of Profiles-->
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label>List of Profiles:</label>
-                        </div>                
-                        <div class="col-md-9">
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="listOfProfiles">
-                                <label class="custom-control-label" for="listOfProfiles">All</label>
-                            </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="listOfProfilesDELETE" data-bind="listOfProfiles" value="DELETE" />
-                                <label class="custom-control-label" for="listOfProfilesDELETE">Delete</label>
-                            </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="listOfProfilesEDIT" data-bind="listOfProfiles" value="EDIT" />
-                                <label class="custom-control-label" for="listOfProfilesEDIT">Edit</label>
-                            </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="listOfProfilesEXECUTE" data-bind="listOfProfiles" value="EXECUTE" />
-                                <label class="custom-control-label" for="listOfProfilesEXECUTE">Execute</label>
+                        <!--:: Account Settings-->
+                        <div class="row mt-3">
+                            <div class="col-md-12 mt-2">
+                                <h5>Account:</h5>
                             </div>
                         </div>
-                    </div>
-                    <!--/: List of Profiles-->
-
-                    <!--:: Personal Information-->
-                    <div class="row">
-                        <div class="col-md-3 col-label">
-                            <label>Personal Information:</label>
-                        </div>                
-                        <div class="col-md-9">
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="personalInformation">
-                                <label class="custom-control-label" for="personalInformation">All</label>
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label class="mb-0">Username</label>
                             </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="personalInformationDELETE" data-bind="personalInformation" value="DELETE" />
-                                <label class="custom-control-label" for="personalInformationDELETE">Delete</label>
-                            </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="personalInformationEDIT" data-bind="personalInformation" value="EDIT" />
-                                <label class="custom-control-label" for="personalInformationEDIT">Edit</label>
-                            </div>
-                            <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
-                                <input type="checkbox" class="custom-control-input" id="personalInformationEXECUTE" data-bind="personalInformation" value="EXECUTE" />
-                                <label class="custom-control-label" for="personalInformationEXECUTE">Execute</label>
+                            <div class="col-md-9 mt-2">
+                                <input id="username" data-bind="username" type="text" class="form-control" />
                             </div>
                         </div>
-                    </div>
-                    <!--/: Personal Information-->                                           
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label class="mb-0">Language</label>
+                            </div>
+                            <div class="col-md-9 mt-2">
+                                <select id="language" data-bind="language" class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label>Time Zone</label>
+                            </div>
+                            <div class="col-md-9 mt-2">
+                                <select id="timeZone" data-bind="timeZone" class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label class="mb-0" style="margin-top: 7px;">Communication</label>
+                            </div>
+                            <div class="col-md-9 mt-2">
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" class="custom-control-input" id="communicationEmail" data-bind="communication" value="EMAIL"/>
+                                    <label class="custom-control-label" for="communicationEmail">E-mail</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" class="custom-control-input" id="communicationSMS" data-bind="communication" value="SMS"/>
+                                    <label class="custom-control-label" for="communicationSMS">SMS</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" class="custom-control-input" id="communicationWhatsApp" data-bind="communication" value="WHATSAPP"/>
+                                    <label class="custom-control-label" for="communicationWhatsApp">WhatsApp</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" class="custom-control-input" id="communicationPhone" data-bind="communication" value="PHONE"/>
+                                    <label class="custom-control-label" for="communicationPhone">Phone</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label class="mb-0" style="margin-top: 7px;">Status</label>
+                            </div>
+                            <div class="col-md-9 mt-2">
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" class="custom-control-input" id="statusDisabled" data-bind="disabled" value="S"/>
+                                    <label class="custom-control-label" for="statusDisabled">Disabled</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12 mt-2">
+                                <h5>Security:</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label class="mb-0">Login verification</label>
+                            </div>
+                            <div class="col-md-9 mt-2">
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Setup login verification</button>
+                                <p class="font-italic">After you log in, you will be asked for additional information to confirm your identity and protect your account from being compromised.  <a href="#" data-toggle="modal" data-target="#exampleModal">Learm more</a></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label class="mb-0" style="margin-top: 7px;">Password reset verification</label>
+                            </div>
+                            <div class="col-md-9 mt-2">
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" class="custom-control-input" id="passwordReset" data-bind="passwordResetVerif" value="S" />
+                                    <label class="custom-control-label" for="passwordReset">Require personal information to reset your password.</label>
+                                </div>
+                                <p class="font-italic">For extra security, this requires you to confirm your email or phone number when you reset your password. <a href="#" data-toggle="modal" data-target="#exampleModal">Learm more</a></p>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Deactivate your account ?</button>
+                            </div>
+                        </div>
+                        <!--/: Account Settings-->
 
+                        <!--:: Change Password-->
+                        <div class="alert alert-danger fade show mt-3 mb-3" role="alert">
+                            <div class="row">
+                                <div class="col-auto align-self-start">
+                                    <i class="fa fa-2x fa-exclamation-triangle mt-2" aria-hidden="true"></i>
+                                </div>
+                                <div class="col">
+                                    <strong>Configure user passwords to expire periodically.</strong><br> 
+                                    Users will need warning that their passwords are going to expire, or they might inadvertently get locked out of the system!
+                                </div>
+                                <div class="col-auto align-self-start">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-3">
+                            <div class="col-md-12 mt-2">
+                                <h5>Change Or Recover Your Password:</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label class="mb-0">Current Password</label>
+                            </div>
+                            <div class="col-md-9 mt-2">
+                                <div class="form-group pass_show"> 
+                                    <input id="old-password" type="password" class="form-control" />
+                                </div>
+                                <small id="passwordlHelp" class="form-text text-muted"><a href="#">Forgot password ?</a></small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label class="mb-0">New Password</label>
+                            </div>
+                            <div class="col-md-9 mt-2">
+                                <div class="form-group pass_show mb-0">
+                                    <input id="new-password" type="password" class="form-control" />
+                                </div>
+                                <div id="password-strength-status" class="mt-0"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label class="mb-0">Verify Password</label>
+                            </div>
+                            <div class="col-md-9 mt-2">
+                                <div class="form-group pass_show">
+                                    <input type="password" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-success fade show mt-3 mb-3" role="alert">
+                            <div class="row">
+                                <div class="col-auto align-self-start">
+                                    <i class="fa fa-2x fa-check-circle mt-2" aria-hidden="true"></i>
+                                </div>
+                                <div class="col mt-2">
+                                    Data has been saved successfully!
+                                </div>
+                                <div class="col-auto align-self-start">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--:: Groups-->               
+                        <div class="row mt-3">
+                            <div class="col-md-12 mt-2">
+                                <h5>Groups:</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label class="mb-0" style="margin-top: 7px;">Group Participant:</label>
+                            </div>
+                            <div class="col-md-9 mt-2">
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
+                                    <input type="checkbox" class="custom-control-input" id="customChkGrp1" data-bind="groupParticipant" value="ADMINISTRATORS" />
+                                    <label class="custom-control-label" for="customChkGrp1">Administrators</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
+                                    <input type="checkbox" class="custom-control-input" id="customChkGrp2" data-bind="groupParticipant" value="ATTENDANT" />
+                                    <label class="custom-control-label" for="customChkGrp2">Attendant</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
+                                    <input type="checkbox" class="custom-control-input" id="customChkGrp3" data-bind="groupParticipant" value="COORDINATOR" />
+                                    <label class="custom-control-label" for="customChkGrp3">Coordinator</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
+                                    <input type="checkbox" class="custom-control-input" id="customChkGrp4" data-bind="groupParticipant" value="DEVELOPER" />
+                                    <label class="custom-control-label" for="customChkGrp4">Developer</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
+                                        <input type="checkbox" class="custom-control-input" id="customChkGrp5" data-bind="groupParticipant" value="MANAGER" />
+                                        <label class="custom-control-label" for="customChkGrp5">Manager</label>
+                                    </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
+                                    <input type="checkbox" class="custom-control-input" id="customChkGrp6" data-bind="groupParticipant" value="OPERATIONS_ANALYST" />
+                                    <label class="custom-control-label" for="customChkGrp6">Operations Analyst</label>
+                                </div>                        
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-group">
+                                    <input type="checkbox" class="custom-control-input" id="customChkGrp7" data-bind="groupParticipant" value="SYSTEM_ANALYST" />
+                                    <label class="custom-control-label" for="customChkGrp7">System Analyst</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--:: Settings-->               
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5>Access:</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label>Access Group:</label>
+                            </div>                
+                            <div class="col-md-9">
+                                <select id="groups" class="form-control"></select>                            
+                            </div>
+                        </div>
+
+                        <!--:: Access Settings-->
+                        <div class="row mt-3">
+                            <div class="col-md-3 col-label">
+                                <label>Access Settings:</label>
+                            </div>                
+                            <div class="col-md-9">
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="accessSettingsAll">
+                                    <label class="custom-control-label" for="accessSettingsAll">All</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="accessSettingsDELETE" data-bind="accessSettings" value="DELETE" />
+                                    <label class="custom-control-label" for="accessSettingsDELETE">Delete</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="accessSettingsEDIT" data-bind="accessSettings" value="EDIT" />
+                                    <label class="custom-control-label" for="accessSettingsEDIT">Edit</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="accessSettingsEXECUTE" data-bind="accessSettings" value="EXECUTE" />
+                                    <label class="custom-control-label" for="accessSettingsEXECUTE">Execute</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/: Access Settings-->
+
+                        <!--:: Account Settings-->
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label>Account Settings:</label>
+                            </div>                
+                            <div class="col-md-9">
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="accountSettings">
+                                    <label class="custom-control-label" for="accountSettings">All</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="accountSettingsDELETE" data-bind="accountSettings" value="DELETE" />
+                                    <label class="custom-control-label" for="accountSettingsDELETE">Delete</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="accountSettingsEDIT" data-bind="accountSettings" value="EDIT" />
+                                    <label class="custom-control-label" for="accountSettingsEDIT">Edit</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="accountSettingsEXECUTE" data-bind="accountSettings" value="EXECUTE" />
+                                    <label class="custom-control-label" for="accountSettingsEXECUTE">Execute</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/: Account Settings-->
+
+                        <!--:: Change Password-->
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label>Change Password:</label>
+                            </div>                
+                            <div class="col-md-9">
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="changePassword">
+                                    <label class="custom-control-label" for="changePassword">All</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="changePasswordDELETE" data-bind="changePassword" value="DELETE" />
+                                    <label class="custom-control-label" for="changePasswordDELETE">Delete</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="changePasswordEDIT" data-bind="changePassword" value="EDIT" />
+                                    <label class="custom-control-label" for="changePasswordEDIT">Edit</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="changePasswordEXECUTE" data-bind="changePassword" value="EXECUTE" />
+                                    <label class="custom-control-label" for="changePasswordEXECUTE">Execute</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/: Change Password-->
+
+                        <!--:: List of Profiles-->
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label>List of Profiles:</label>
+                            </div>                
+                            <div class="col-md-9">
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="listOfProfiles">
+                                    <label class="custom-control-label" for="listOfProfiles">All</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="listOfProfilesDELETE" data-bind="listOfProfiles" value="DELETE" />
+                                    <label class="custom-control-label" for="listOfProfilesDELETE">Delete</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="listOfProfilesEDIT" data-bind="listOfProfiles" value="EDIT" />
+                                    <label class="custom-control-label" for="listOfProfilesEDIT">Edit</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="listOfProfilesEXECUTE" data-bind="listOfProfiles" value="EXECUTE" />
+                                    <label class="custom-control-label" for="listOfProfilesEXECUTE">Execute</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/: List of Profiles-->
+
+                        <!--:: Personal Information-->
+                        <div class="row">
+                            <div class="col-md-3 col-label">
+                                <label>Personal Information:</label>
+                            </div>                
+                            <div class="col-md-9">
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="personalInformation">
+                                    <label class="custom-control-label" for="personalInformation">All</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="personalInformationDELETE" data-bind="personalInformation" value="DELETE" />
+                                    <label class="custom-control-label" for="personalInformationDELETE">Delete</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="personalInformationEDIT" data-bind="personalInformation" value="EDIT" />
+                                    <label class="custom-control-label" for="personalInformationEDIT">Edit</label>
+                                </div>
+                                <div class="custom-control custom-checkbox custom-control-inline chk-in-access">
+                                    <input type="checkbox" class="custom-control-input" id="personalInformationEXECUTE" data-bind="personalInformation" value="EXECUTE" />
+                                    <label class="custom-control-label" for="personalInformationEXECUTE">Execute</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/: Personal Information-->                                           
+
+                    </div>
+                    <!--/: User Settings-->
                 </div>
-                <!--/: User Settings-->
-            </div>
-            
-            <!--/: Content-->
-        </form>
+                
+                <!--/: Content-->
+            </form>
+        </div>
+        <!--/: Container-->
+        
+        <!--:: Footer-->
+        <footer id="navFooter" class="footer bg-dark mt-auto"></footer>
+        <!--/: Footer-->
+
     </div>
-    <!--/: Container-->
+    <!--/: all-->
 
     <div class="fixed-action-btn">
         <a class="btn-floating btn-large">
@@ -535,28 +545,24 @@
           </li>
         </ul>
     </div>
-      
-    <!--:: Footer-->
-    <footer id="navFooter" class="footer bg-dark mt-auto"></footer>
-    <!--/: Footer-->
 
     <!--:: Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+            <div class="modal-content" style="z-index: 1060">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
 
         </div>
