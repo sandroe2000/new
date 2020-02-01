@@ -29,9 +29,9 @@ export class ProfileView {
         });
     }
 
-    setTableProfiles(model) {
+    setTableProfiles(listModel) {
 
-        let tableProfiles = `${model.content.map(profile => `<tr data-id="${profile.id}">
+        let tableProfiles = `${listModel.content.map(profile => `<tr data-id="${profile.id}">
                                 <td class="w-10">
                                     ${profile.id}
                                 </td>
@@ -49,6 +49,7 @@ export class ProfileView {
                                     <span class="oi oi-trash mr-2 ico-mouse-hand"></span>
                                 </td>
                             </tr>`).join('')}`;
+
         
         this.tableProfiles.innerHTML = tableProfiles;
 

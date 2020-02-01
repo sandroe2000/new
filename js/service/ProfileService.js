@@ -53,13 +53,15 @@ export class ProfileService {
 
         let profiles = this.profileController.profileService.profiles.content;
         let result = {};
-
-        profiles.forEach(profile => {
+        
+        profiles.forEach((profile, index) => {
             if(profile.id == id){
                 result = profile;
+                //PARA O LOOP APOS ENCONTRAR RESULTADO
+                profiles.length = profiles.indexOf(profile);
             }
-        });
-
+        });  
+        
         return result;
     }
 
@@ -88,6 +90,5 @@ export class ProfileService {
         const response = await fetch(`/profiles/${id}`, {
             method: 'DELETE'
         });
-        await this.findAll();
     }
 }

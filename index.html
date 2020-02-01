@@ -46,8 +46,12 @@
     <script src="assets/popper.js/dist/umd/popper.min.js"></script>
     <script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
+
       $(document).ready(function(){
+        
         $('.pass_show').append('<i class="fa fa-eye ptxt"></i>');  
+        
+        fetch(encodeURI('/profiles/import'), {method: 'GET'});
       });
         
       $(document).on('click','.pass_show .ptxt', function(){ 

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css" />
+    <!--link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css" /-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/darkly/bootstrap.css">
     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="assets/open-iconic/font/css/open-iconic-bootstrap.min.css" />
     <link rel="stylesheet" href="assets/material-floating-menu-action-buttons/css/jquery-fab-button.css" />
@@ -72,17 +73,17 @@
                                     <table id="tableProfile" class="table table-striped" style="width: 100%;">
                                         <thead>
                                             <tr>
-                                                <th class="w-10">#<span class="oi oi-elevator ml-2"></span></th>
-                                                <th class="w-40">Name<span class="oi oi-caret-bottom ml-2"></span></th>
-                                                <th class="w-20">Groups<span class="oi oi-elevator ml-2"></span></th>
-                                                <th class="w-10">Disabled</th>
+                                                <th data-field="id" class="w-10">#<span class="oi oi-elevator ml-2"></span></th>
+                                                <th data-field="name" class="w-40">Name<span class="oi oi-caret-bottom ml-2"></span></th>
+                                                <th data-field="groupParticipant" class="w-20">Groups<span class="oi oi-elevator ml-2"></span></th>
+                                                <th data-field="disabled" class="w-10">Disabled</th>
                                                 <th class="w-10"></th>
                                             </tr>
                                         </thead>
                                         <tbody></tbody>
                                     </table>
                                 </div>
-                                <select id="tableProfileSize" class="form-control w-10 mr-3" style="float:left; min-width: 75px;">
+                                <select id="TABLE_SIZE_tableProfile" class="form-control w-10 mr-3" style="float:left; min-width: 75px;">
                                     <option value="5">5</option>
                                     <option value="10">10</option>
                                     <option value="25">25</option>
@@ -90,7 +91,7 @@
                                     <option value="100">100</option>
                                 </select>
                                 <div aria-label="Page navigation">
-                                    <ul id="profilePagination" class="pagination" style="border-radius: 0"></ulid="paginationCategory">
+                                    <ul id="TABLE_PAGINATION_tableProfile" class="pagination" style="border-radius: 0"></ulid="paginationCategory">
                                 </div>
                             </div>
                         </div>
@@ -583,6 +584,7 @@
     <script src="assets/material-floating-menu-action-buttons/js/jquery-fab-button.min.js"></script>
     <script src="assets/overlayScrollbars/js/OverlayScrollbars.min.js"></script>
     <script src="assets/simplePagination.js/jquery.simplePagination.js"></script>
+    <script src="assets/hullabaloo/js/hullabaloo.min.js"></script>
 
     <!-- Controller Module -->
     <script type="module" src="js/controller/ProfileController.js"></script>

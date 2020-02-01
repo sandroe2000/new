@@ -15,5 +15,6 @@
         "http-proxy-middleware": "^0.20.0",
         "url": "^0.11.0"
     },
-    "optionalDependencies": {}
+    "optionalDependencies": {},
+    "dependencies": {}
 }

@@ -7,6 +7,7 @@ import { Profile } from '../model/Profile.js';
 import { Combo } from '../model/Combo.js';
 import { ImgUploadHelper } from '../helper/ImgUploadHelper.js';
 import { ProfileService } from '../service/ProfileService.js';
+//import { DataTable } from '../component/DataTable.js';
 
 class ProfileController {
 
@@ -20,6 +21,7 @@ class ProfileController {
         this.scrollTabsHelper = new ScrollTabsHelper();
         this.checkPasswordStrengthHelper = new CheckPasswordStrengthHelper( document.querySelector('#new-password'));
         this.scopeHelper = {};
+        this.listProfiles = [];
         this.profile = {};
         this.imgUploadHelper1 = new ImgUploadHelper('imgProfile1', '/files?folder=none');
         //this.imgUploadHelper2 = new ImgUploadHelper('imgProfile2', '/files?folder=none');
@@ -41,20 +43,27 @@ class ProfileController {
 
     init(){
 
-        $('.btnSaveProfile').click((event) =>{
+        this.findAll();        
+        this.setGroups();
+        this.setTimeZone();
+        this.setLanguage();
 
-            this.profileService.saveOrUpdate(this.profile.profile);
-            document.querySelector('#searchName').value = this.profile.profile.name;
-            $('#profileTab li:eq(0) a').tab('show');
-            this.page = 0;
-            this.findAll();
+        $('.btnSaveProfile').click((event) =>{
+            
+            this.profileService.saveOrUpdate(this.profile).then(result =>{
+
+                document.querySelector('#searchName').value = this.profile.name;
+                $('#profileTab li:eq(0) a').tab('show');
+                this.page = 0;
+                this.findAll();
+            });            
         });
 
         $('.btnNewProfile').click((event) =>{
 
             this.profile = new Profile();
             this.scopeHelper = new ScopeHelper();
-            this.scopeHelper.init( this.profile.profile );
+            this.scopeHelper.init( this.profile );
             $('#profileTab li:eq(1) a').tab('show');
         });
 
@@ -64,49 +73,46 @@ class ProfileController {
             this.findAll();
         } ,false);
 
-        document.querySelector('#tableProfileSize').addEventListener('change', (event) =>{
+        document.querySelector('#TABLE_SIZE_tableProfile').addEventListener('change', (event) =>{
 
             this.page = 0;
             this.findAll();
         } ,false);
-
-        this.findAll();        
-        this.setGroups();
-        this.setTimeZone();
-        this.setLanguage();
     }
 
     async findAll(){
-
+       
         this.startWait();
 
         let name = document.querySelector('#searchName').value;
         let group = document.querySelector('#searchGroup').value;        
-        let size = document.querySelector('#tableProfileSize').value; 
+        let size = document.querySelector('#TABLE_SIZE_tableProfile').value; 
 
         if(this.page){
             this.page = this.page;
         }
         
         let uri = `/profiles/search?name=${name}&groupParticipant=${group}&size=${size}&page=${this.page}`;
-        //let uri = `data/profiles.json?name=${name}&groupParticipant=${group}&size=${size}&page=${this.page}`;
         
-        this.profile = await this.profileService.findAll(uri);
-        this.profileView.setTableProfiles(this.profile);
+        this.listProfiles = await this.profileService.findAll(uri);
+        this.profileView.setTableProfiles(this.listProfiles);
 
-        $('#profilePagination').pagination({
-            pages: this.profile.totalPages,
-            currentPage: (new Number(this.profile.number)+1),
+        let that = this;
+
+        $('#TABLE_PAGINATION_tableProfile').pagination({
+            pages: this.listProfiles.totalPages,
+            currentPage: (new Number(this.listProfiles.number)+1),
             ellipsePageSet: true,
             prevText: "Anterior",
             nextText: "Próximo",
             selectOnClick: true,
             onPageClick:function(pageNumber, event) {
-                profileController.page = (new Number(pageNumber)-1);
-                profileController.findAll();
+
+                that.page = (pageNumber - 1);
+                that.findAll();                
             }
         });
-
+        
         this.stopWait();
     }
 
@@ -133,9 +139,9 @@ class ProfileController {
 
     loadProfileById(id){
 
-        this.profile = new Profile( this.profileService.findById(id) );
+        this.profile = this.profileService.findById(id);
         this.scopeHelper = new ScopeHelper();
-        this.scopeHelper.init( this.profile.profile );
+        this.scopeHelper.init( this.profile );
         
         $('#profileTab li:eq(1) a').tab('show');
     }
@@ -154,7 +160,12 @@ class ProfileController {
 
     delete(id){
 
-        this.profileService.delete(id);
+        let hulla = new hullabaloo();
+
+        this.profileService.delete(id).then(result =>{
+            hulla.send("Removido com sucesso!", "success")
+            this.findAll();
+        });
     }
 }
 
