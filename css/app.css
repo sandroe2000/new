@@ -218,7 +218,7 @@ td .ellipsis {
     text-overflow: ellipsis;
 }
 [title] {
-    cursor: help;
+    cursor: default;
 }
 
 /*Pagination*/

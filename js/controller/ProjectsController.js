@@ -10,3 +10,9 @@ export class ProjectsController {
         );
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    
+    new ProjectsController();    
+    OverlayScrollbars(document.querySelectorAll('#all'), { });
+});

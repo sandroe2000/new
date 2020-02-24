@@ -17,16 +17,21 @@ class ProfileController {
             document.querySelector('#navHeader'),
             document.querySelector('#navFooter')
         );
-
+        
         this.scrollTabsHelper = new ScrollTabsHelper();
+        
         this.checkPasswordStrengthHelper = new CheckPasswordStrengthHelper( document.querySelector('#new-password'));
+        
         this.scopeHelper = {};
+        
         this.listProfiles = [];
+        
         this.profile = {};
+        
         this.imgUploadHelper1 = new ImgUploadHelper('imgProfile1', '/files?folder=none');
         //this.imgUploadHelper2 = new ImgUploadHelper('imgProfile2', '/files?folder=none');
         
-        this.profileService = new ProfileService(this);
+        this.profileService = new ProfileService(this);        
         
         this.profileView = new ProfileView( 
             this, 
@@ -38,80 +43,49 @@ class ProfileController {
 
         this.page = 0;
 
+        this.sort = 'name,ASC';
+
         this.init();
     }
 
     init(){
 
-        this.findAll();        
+        this.find();       
+
         this.setGroups();
+
         this.setTimeZone();
+
         this.setLanguage();
 
-        $('.btnSaveProfile').click((event) =>{
+        document.querySelector('.btnSaveProfile').addEventListener('click', (event) => { this.save() }, false);
+
+        document.querySelector('.btnNewProfile').addEventListener('click', (event) => { this._new() }, false);
+
+        document.querySelector('#btnSearchProfiles').addEventListener('click', (event) =>{ this.page = 0; this.find() } ,false);
+
+        document.querySelector('#TABLE_SIZE_tableProfile').addEventListener('change', (event) =>{ this.page = 0; this.find() } ,false);
+
+        document.querySelectorAll('#tableProfile > thead > tr th span').forEach(item => {
             
-            this.profileService.saveOrUpdate(this.profile).then(result =>{
-
-                document.querySelector('#searchName').value = this.profile.name;
-                $('#profileTab li:eq(0) a').tab('show');
-                this.page = 0;
-                this.findAll();
-            });            
+            item.addEventListener('click', event => {                
+                let th = event.target.closest('th');
+                this.sortDirection(th.getAttribute('data-field'), event.target);
+            });
         });
-
-        $('.btnNewProfile').click((event) =>{
-
-            this.profile = new Profile();
-            this.scopeHelper = new ScopeHelper();
-            this.scopeHelper.init( this.profile );
-            $('#profileTab li:eq(1) a').tab('show');
-        });
-
-        document.querySelector('#btnSearchProfiles').addEventListener('click', (event) =>{
-
-            this.page = 0;
-            this.findAll();
-        } ,false);
-
-        document.querySelector('#TABLE_SIZE_tableProfile').addEventListener('change', (event) =>{
-
-            this.page = 0;
-            this.findAll();
-        } ,false);
     }
 
-    async findAll(){
+    async find(){
        
         this.startWait();
 
         let name = document.querySelector('#searchName').value;
         let group = document.querySelector('#searchGroup').value;        
-        let size = document.querySelector('#TABLE_SIZE_tableProfile').value; 
-
-        if(this.page){
-            this.page = this.page;
-        }
+        let size = document.querySelector('#TABLE_SIZE_tableProfile').value;        
+        let uri = `/profiles/search?name=${name}&groupParticipant=${group}&size=${size}&page=${this.page}&sort=${this.sort}`;
         
-        let uri = `/profiles/search?name=${name}&groupParticipant=${group}&size=${size}&page=${this.page}`;
-        
-        this.listProfiles = await this.profileService.findAll(uri);
+        this.listProfiles = await this.profileService.find(uri);        
         this.profileView.setTableProfiles(this.listProfiles);
-
-        let that = this;
-
-        $('#TABLE_PAGINATION_tableProfile').pagination({
-            pages: this.listProfiles.totalPages,
-            currentPage: (new Number(this.listProfiles.number)+1),
-            ellipsePageSet: true,
-            prevText: "Anterior",
-            nextText: "Próximo",
-            selectOnClick: true,
-            onPageClick:function(pageNumber, event) {
-
-                that.page = (pageNumber - 1);
-                that.findAll();                
-            }
-        });
         
         this.stopWait();
     }
@@ -139,8 +113,8 @@ class ProfileController {
 
     loadProfileById(id){
 
-        this.profile = this.profileService.findById(id);
         this.scopeHelper = new ScopeHelper();
+        this.profile = this.profileService.findById(id);
         this.scopeHelper.init( this.profile );
         
         $('#profileTab li:eq(1) a').tab('show');
@@ -158,21 +132,66 @@ class ProfileController {
         }, 500);
     }
 
+    sortDirection(field, ico){
+
+        let clazz = ico.getAttribute('class');
+
+        document.querySelectorAll('#tableProfile > thead > tr th span').forEach(item => {
+                         
+            if(ico === item){
+
+                if(clazz.indexOf('oi-caret-bottom') > -1){
+                    item.classList.replace('oi-elevator', 'oi-caret-top');           
+                    item.classList.replace('oi-caret-bottom', 'oi-caret-top');
+                    this.sort = `${field},DESC`;
+                }else{
+                    item.classList.replace('oi-elevator', 'oi-caret-bottom');           
+                    item.classList.replace('oi-caret-top', 'oi-caret-bottom');
+                    this.sort = `${field},ASC`;
+                }
+
+            }else{
+                item.classList.replace('oi-caret-top', 'oi-elevator');           
+                item.classList.replace('oi-caret-bottom', 'oi-elevator');
+            }
+
+        });
+
+        this.find();
+    }
+
+    save(){
+
+        this.profileService.saveOrUpdate(this.profile).then(result =>{
+
+            document.querySelector('#searchName').value = this.profile.name;
+            $('#profileTab li:eq(0) a').tab('show');
+            this.page = 0;
+            this.find();
+        });
+    }
+
+    _new(){
+
+        this.profile = new Profile();
+        this.scopeHelper = new ScopeHelper();
+        this.scopeHelper.init( this.profile );
+        $('#profileTab li:eq(1) a').tab('show');
+    }
+
     delete(id){
 
         let hulla = new hullabaloo();
 
         this.profileService.delete(id).then(result =>{
             hulla.send("Removido com sucesso!", "success")
-            this.findAll();
+            this.find();
         });
     }
 }
 
-let profileController;
-
 document.addEventListener("DOMContentLoaded", () => {
     
-    profileController = new ProfileController();    
+    new ProfileController();    
     OverlayScrollbars(document.querySelectorAll('#all'), { });
 });

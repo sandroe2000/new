@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <!--link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css" /-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/darkly/bootstrap.css">
+    <link rel="stylesheet" href="assets/bootswatch/bootstrap.css">
     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="assets/open-iconic/font/css/open-iconic-bootstrap.min.css" />
     <link rel="stylesheet" href="assets/material-floating-menu-action-buttons/css/jquery-fab-button.css" />
@@ -73,9 +73,9 @@
                                     <table id="tableProfile" class="table table-striped" style="width: 100%;">
                                         <thead>
                                             <tr>
-                                                <th data-field="id" class="w-10">#<span class="oi oi-elevator ml-2"></span></th>
-                                                <th data-field="name" class="w-40">Name<span class="oi oi-caret-bottom ml-2"></span></th>
-                                                <th data-field="groupParticipant" class="w-20">Groups<span class="oi oi-elevator ml-2"></span></th>
+                                                <th data-field="id" class="w-10">#<span class="oi oi-elevator ml-2 ico-mouse-hand"></span></th>
+                                                <th data-field="name" class="w-40">Name<span class="oi oi-caret-bottom ml-2 ico-mouse-hand"></span></th>
+                                                <th data-field="groupParticipant" class="w-20">Groups<span class="oi oi-elevator ml-2 ico-mouse-hand"></span></th>
                                                 <th data-field="disabled" class="w-10">Disabled</th>
                                                 <th class="w-10"></th>
                                             </tr>
@@ -123,7 +123,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-3 col-label">
-                                <label class="mb-0">Name</label>
+                                <label class="mb-0">Name</label>import { ScrollTabsHelper } from '../helper/ScrollTabsHelper.js';
                             </div>
                             <div class="col-md-9 mt-2">
                                 <input id="name" data-bind="name" type="text" class="form-control" />
@@ -156,7 +156,7 @@
                                 <label class="mb-0">Email Address</label>
                             </div>
                             <div class="col-md-9 mt-2">
-                                <input id="emailAddress" data-bind="emailAddress" type="text" class="form-control" />
+                                <input id="emailAddress" data-bind="emailAddress" type="email" class="form-control" />
                             </div>
                         </div>
                         <!--/: Personal Information-->

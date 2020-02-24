@@ -39,7 +39,7 @@ export class ProfileService {
         return this.language;
     }
 
-    async findAll(uri){
+    async find(uri){
 
         const response = await fetch(encodeURI(uri), {
             method: 'GET'

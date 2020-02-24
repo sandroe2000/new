@@ -20,6 +20,8 @@ export class ScopeHelper {
             }
             
             if( element.type === "text" || 
+                element.type === "email" ||
+                element.type === "number" ||
                 element.type === "textearea" || 
                 element.type === "date" || 
                 element.type === "password" ||
@@ -27,7 +29,7 @@ export class ScopeHelper {
 
                 element.value = data[propToBind];
 
-                element.addEventListener('keyup', (event) => {
+                element.addEventListener('change', (event) => {
                     data[event.target.getAttribute('data-bind')] = event.target.value;
                 });
             }

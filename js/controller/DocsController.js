@@ -10,3 +10,9 @@ export class DocsController {
         );
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    
+    new DocsController();    
+    OverlayScrollbars(document.querySelectorAll('#all'), { });
+});
